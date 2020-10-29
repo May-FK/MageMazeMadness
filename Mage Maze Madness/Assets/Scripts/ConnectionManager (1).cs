@@ -7,8 +7,8 @@ public class ConnectionManager: MonoBehaviourPunCallbacks //THIS LINE IN IMPORTA
     string gameVersion = ".1";
 
     [SerializeField]
-    private byte maxPlayersPerRoom = 5;
-    //creaating a byte which is similair to an int to hold the max number of players per room
+    private byte maxPlayersPerRoom = 8;
+    //creating a byte which is similair to an int to hold the max number of players per room
     //Serialized field allows the private varible to be edited in the unity console
 
     void Start()
@@ -44,13 +44,13 @@ public class ConnectionManager: MonoBehaviourPunCallbacks //THIS LINE IN IMPORTA
     //if no lobby can be found we will create a new lobby with our current max players per room variable.
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
-        Debug.Log("Another player arrived.");
+        Debug.Log("A mage has entered the maze!");
     }
     //when a player enters the room this message appears.
 
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
-        Debug.Log("Another player left.");
+        Debug.Log("A mage has left the maze.");
     }
     //when a player leaves the room this message appears.
 }

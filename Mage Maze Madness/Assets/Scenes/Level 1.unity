@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 323444403}
   m_Layer: 0
   m_Name: ShortHedge (1)
-  m_TagString: Untagged
+  m_TagString: iWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -982,7 +982,7 @@ GameObject:
   - component: {fileID: 4430146571492527438}
   m_Layer: 0
   m_Name: ShortHedge
-  m_TagString: Untagged
+  m_TagString: iWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

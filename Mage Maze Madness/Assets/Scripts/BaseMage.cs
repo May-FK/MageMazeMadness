@@ -7,9 +7,8 @@ public class BaseMage : MonoBehaviour
 {
 
     public GameObject Player;
-    public Material FireRed;
-    public Material HunterBlack;
-    public Material TransformPink;
+    //Looking up how to make an array of materials so the mages can change looks
+
     //these are the variables that all players will use.
 
 

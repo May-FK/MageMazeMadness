@@ -11,7 +11,7 @@ public class theHunter : BaseMage
     {
         if (isTheHunter == true)
         {
-            Player.GetComponent<Renderer>().material = HunterBlack;
+            //Need to add change the material to look like the hunter
             gameObject.tag = "Hunter";
 
         }

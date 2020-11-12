@@ -12,7 +12,7 @@ public class fireMage : BaseMage
     private bool timerStart;
     //a bool to act as a switch to turn on the timer. 
 
-    [SerializeField] private bool hasOrb;
+    public bool hasOrb;
     //a bool to know if the player has the energy to use an ability 
 
     [SerializeField] private bool canUseAbility;
@@ -34,7 +34,7 @@ public class fireMage : BaseMage
         if (isFireMage == true)
         {
             gameObject.tag = "FireMage";
-            Player.GetComponent<Renderer>().material = FireRed;
+            //Need to add a change the material to look like the firemage
 
             //if a player is a Fire Mage they get the Fire Red color and the Fire Mage 'Tag'
 
@@ -84,10 +84,9 @@ public class fireMage : BaseMage
             if (other.gameObject.tag == "Hunter")
             {
                 Player.GetComponent<fireMage>().isFireMage = false;
-                Player.GetComponent<Renderer>().material = TransformPink;
+
                 Invoke("BecomeHunter", 3.0f);
             }
-            //when the player gets tagged they lose their mage ability and turn pink (place holder color as a visual for the cooldown between tags" 
             //Calls the function BecomeHunter after 3 seconds.
 
 

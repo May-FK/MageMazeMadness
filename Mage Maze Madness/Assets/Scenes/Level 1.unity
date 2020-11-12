@@ -1977,7 +1977,7 @@ GameObject:
   - component: {fileID: 3773650163954273580}
   m_Layer: 0
   m_Name: FireMageCharacter
-  m_TagString: Untagged
+  m_TagString: FireMage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2110,7 +2110,7 @@ GameObject:
   - component: {fileID: 5396947338539784911}
   m_Layer: 0
   m_Name: LightningMageCharacter
-  m_TagString: Untagged
+  m_TagString: LightningMage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2273,10 +2273,9 @@ GameObject:
   - component: {fileID: 5343512304432604030}
   - component: {fileID: 5916373308490667941}
   - component: {fileID: 5916373308490667939}
-  - component: {fileID: 5916373308490667942}
   m_Layer: 0
   m_Name: WindMageCharacter
-  m_TagString: Untagged
+  m_TagString: WindMage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2317,24 +2316,6 @@ MonoBehaviour:
   DDObject: {fileID: 0}
   speed: 10
   turnSmoothTime: 0.1
---- !u!114 &5916373308490667942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5916373308490667938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc1b8eb6c10523e4c94e0bb9209c6a58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  isFireMage: 1
-  hasOrb: 1
-  canUseAbility: 1
-  burnTimer: 5
-  useAbility: 0
 --- !u!23 &5969830329726627345
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2393,7 +2374,7 @@ GameObject:
   - component: {fileID: 6250339874223048819}
   m_Layer: 0
   m_Name: HunterCharacter
-  m_TagString: Untagged
+  m_TagString: Hunter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

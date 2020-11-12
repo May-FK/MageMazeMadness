@@ -234,6 +234,7 @@ GameObject:
   - component: {fileID: 323444404}
   - component: {fileID: 323444403}
   - component: {fileID: 323444405}
+  - component: {fileID: 323444406}
   m_Layer: 0
   m_Name: ShortHedge (1)
   m_TagString: iWall
@@ -315,6 +316,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: -2530911878739107780, guid: 1844ca745c3c89d42b9bd57c0cf618b1, type: 3}
+--- !u!65 &323444406
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323444401}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.05, z: 0.025}
+  m_Center: {x: 0, y: 0.02, z: 0}
 --- !u!1 &545409418
 GameObject:
   m_ObjectHideFlags: 0
@@ -1975,6 +1989,7 @@ GameObject:
   - component: {fileID: 3198229565009099254}
   - component: {fileID: 3773650163954273579}
   - component: {fileID: 3773650163954273580}
+  - component: {fileID: 3773650163954273581}
   m_Layer: 0
   m_Name: FireMageCharacter
   m_TagString: FireMage
@@ -2014,6 +2029,20 @@ MonoBehaviour:
   canUseAbility: 0
   burnTimer: 5
   useAbility: 0
+--- !u!136 &3773650163954273581
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3773650163954273578}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.014686574
+  m_Height: 0.051691975
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: -0.003}
 --- !u!23 &4430146571492527438
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2108,6 +2137,7 @@ GameObject:
   - component: {fileID: 5969830329726627345}
   - component: {fileID: 5396947338539784910}
   - component: {fileID: 5396947338539784911}
+  - component: {fileID: 5396947338539784912}
   m_Layer: 0
   m_Name: LightningMageCharacter
   m_TagString: LightningMage
@@ -2146,6 +2176,20 @@ MonoBehaviour:
   hasOrb: 0
   canUseAbility: 0
   useAbility: 0
+--- !u!136 &5396947338539784912
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5396947338539784909}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.014686574
+  m_Height: 0.051691975
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: -0.003}
 --- !u!23 &5581484073768979060
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2239,6 +2283,7 @@ GameObject:
   - component: {fileID: 2134013396184821357}
   - component: {fileID: 4430146571492527438}
   - component: {fileID: 5666740634269134648}
+  - component: {fileID: 5666740634269134649}
   m_Layer: 0
   m_Name: ShortHedge
   m_TagString: iWall
@@ -2260,6 +2305,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: -2530911878739107780, guid: 1844ca745c3c89d42b9bd57c0cf618b1, type: 3}
+--- !u!65 &5666740634269134649
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5666740634269134647}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.053176697, z: 0.025}
+  m_Center: {x: 0, y: 0.02158835, z: -0.00017018149}
 --- !u!1 &5916373308490667938
 GameObject:
   m_ObjectHideFlags: 0
@@ -2273,6 +2331,8 @@ GameObject:
   - component: {fileID: 5343512304432604030}
   - component: {fileID: 5916373308490667941}
   - component: {fileID: 5916373308490667939}
+  - component: {fileID: 5916373308490667940}
+  - component: {fileID: 5916373308490667942}
   m_Layer: 0
   m_Name: WindMageCharacter
   m_TagString: WindMage
@@ -2298,6 +2358,20 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &5916373308490667940
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5916373308490667938}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.017
+  m_Height: 0.051691975
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: -0.003}
 --- !u!114 &5916373308490667941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2316,6 +2390,24 @@ MonoBehaviour:
   DDObject: {fileID: 0}
   speed: 10
   turnSmoothTime: 0.1
+--- !u!114 &5916373308490667942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5916373308490667938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc1b8eb6c10523e4c94e0bb9209c6a58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 5916373308490667938}
+  isFireMage: 1
+  hasOrb: 0
+  canUseAbility: 0
+  burnTimer: 5
+  useAbility: 0
 --- !u!23 &5969830329726627345
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2372,6 +2464,7 @@ GameObject:
   - component: {fileID: 5656939991366139053}
   - component: {fileID: 6250339874223048818}
   - component: {fileID: 6250339874223048819}
+  - component: {fileID: 6250339874223048820}
   m_Layer: 0
   m_Name: HunterCharacter
   m_TagString: Hunter
@@ -2407,6 +2500,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 6250339874223048817}
   isTheHunter: 1
+--- !u!136 &6250339874223048820
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6250339874223048817}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.014686574
+  m_Height: 0.051691975
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: -0.003}
 --- !u!4 &6982535621500779106
 Transform:
   m_ObjectHideFlags: 0

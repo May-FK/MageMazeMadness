@@ -7,7 +7,7 @@ public class LightningMage : BaseMage
     private ThirdPersonMovement control;
 
     public bool isLightningMage = false;
-    //a bool to ensure the player using the script is the right type of mage to use the fire ability
+    //a bool to ensure the player using the script is the right type of mage to use the lightning ability
 
     private bool timerStart;
     //a bool to act as a switch to turn on the timer. 
@@ -37,7 +37,7 @@ public class LightningMage : BaseMage
         if (isLightningMage == true)
         {
 
-            //if a player is a Fire Mage they get the Fire Red color and the Fire Mage 'Tag'
+            //if a player is a lightning they get the Fire Red color and the Fire Mage 'Tag'
 
             if (canUseAbility == true)
             {
@@ -52,7 +52,7 @@ public class LightningMage : BaseMage
                     Debug.Log("You need to collect and energy orb to use an ability.");
                 }
             }
-            //if the player press F (placeholder input) while they can use their ability, they will call the burn wall function
+            //if the player press F (placeholder input) while they can use their ability
             //if they press f with no energy it will remind them to collect energy orbs
         }
 

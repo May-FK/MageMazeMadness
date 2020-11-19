@@ -1,22 +1,29 @@
 ﻿using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
+using Photon.Pun.Demo.PunBasics;
 
-public class ConnectionManager: MonoBehaviourPunCallbacks //THIS LINE IN IMPORTANT. REMEMBER TO ADD PUNCALLBACKS
+public class ConnectionManager : MonoBehaviourPunCallbacks //THIS LINE IN IMPORTANT. REMEMBER TO ADD PUNCALLBACKS
 {
     string gameVersion = ".1";
 
     [SerializeField]
     private byte maxPlayersPerRoom = 8;
-    //creating a byte which is similair to an int to hold the max number of players per room
+    //creating a byte which is similair to an int to hold the max number of players pe      
     //Serialized field allows the private varible to be edited in the unity console
 
     void Start()
     {
         PhotonNetwork.AutomaticallySyncScene = true;
         ConnectGame();
+
     }
     // at the start of the game all the players will load the same level 
+
+    void Update()
+    {
+
+    }
     public void ConnectGame()
     {
         PhotonNetwork.GameVersion = gameVersion;

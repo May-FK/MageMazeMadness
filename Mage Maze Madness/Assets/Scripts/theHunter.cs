@@ -4,23 +4,30 @@ using UnityEngine;
 
 public class theHunter : BaseMage
 {
-    public bool isTheHunter;
     //a bool that controls whether the player is marked as The Hunter or not.
+    public bool isTheHunter;
+
+    //this allows the player to change color to match their mage
+    public Material[] hunterC = new Material[6];
+    Material[] mats;
+
 
     private void Update()
     {
+        //if a player is the Hunter they get the Hunter Robes and "Hunter" tag.
         if (isTheHunter == true)
         {
-            //Need to add change the material to look like the hunter
-            gameObject.tag = "Hunter";
+            Player.tag = "Hunter";
+            hunterRobes();
 
         }
 
     }
-    //if the player is the Hunter they get the Hunter color and 'Tag'
+   
 
     public void OnTriggerEnter(Collider other)
     {
+        //The hunter becomes the type of mage that was tagged
         if (isTheHunter == true)
         {
             if (other.gameObject.tag == "FireMage")
@@ -29,15 +36,32 @@ public class theHunter : BaseMage
                 Player.GetComponent<fireMage>().isFireMage = true;
                 Player.GetComponent<theHunter>().isTheHunter = false;
 
+            }
+
+            if (other.gameObject.tag == "LightningMage")
+            {
+                Debug.Log("You have zapped the electricity of out the Lightning Mage.");
+                Player.GetComponent<LightningMage>().isLightningMage = true;
+                Player.GetComponent<theHunter>().isTheHunter = false;
 
             }
         }
 
     }
 
-    //if the hunter tags a Fire Mage they steal the fire mages power and the mage becomes the Hunter.
-    //the swiggle under OnTriggerEnter is okay.
 
+    void hunterRobes()
+    {
+        mats = Player.GetComponent<MeshRenderer>().materials;
+        mats[0] = hunterC[0];
+        mats[1] = hunterC[1];
+        mats[2] = hunterC[2];
+        mats[3] = hunterC[3];
+        mats[4] = hunterC[4];
+        mats[5] = hunterC[5];
+        Player.GetComponent<MeshRenderer>().materials = mats;
+
+    }
 
 }
 

@@ -5,11 +5,8 @@ using UnityEngine.UIElements;
 
 public class BaseMage : MonoBehaviour
 {
-
-    public GameObject Player;
-    //Looking up how to make an array of materials so the mages can change looks
-
     //these are the variables that all players will use.
+    public GameObject Player;
 
 
     #region CharacterSelect
@@ -36,7 +33,7 @@ public class BaseMage : MonoBehaviour
     #endregion
     //We only need this if we want to do a physical character select instead of a UI Character Select.
 
-
+    //tbh this script is kinda useless. I was learning about inheritance in class and wanted to try it out.
 }
 
 

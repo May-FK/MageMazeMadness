@@ -5,61 +5,67 @@ using UnityEngine;
 
 public class fireMage : BaseMage
 {
-
-    public bool isFireMage = false;
     //a bool to ensure the player using the script is the right type of mage to use the fire ability
+    public bool isFireMage = false;
 
-    private bool timerStart;
     //a bool to act as a switch to turn on the timer. 
+    private bool timerStart;
 
-    public bool hasOrb;
     //a bool to know if the player has the energy to use an ability 
+    [SerializeField] private bool hasOrb;
 
-    [SerializeField] private bool canUseAbility;
     //when the player is in a position where theye could use the ability 
+    private bool canUseAbility;
 
-    public float burnTimer = 5.0f;
     //a float that will count down and control the time a hedge stays burned down
+    public float burnTimer = 5.0f;
 
-    [SerializeField] private bool useAbility;
     //if the player has all the varibles needed to use the ability they can use the ability
+    private bool useAbility;
 
+    //A Fire Mage can only have 1 wall burnt down at a time. This a temp variable that stores that wall.
     GameObject wall;
-    //A Fire Mage can only have 1 wall burnt down at a time.
+
+    //this allows the player to change color to match their mage
+    public Material[] fireC = new Material[6];
+    Material[] mats;
 
 
     void Update()
     {
-
+        //if a player is a Fire Mage they get the Fire Mage Robes and "Fire" tag.
         if (isFireMage == true)
         {
-            gameObject.tag = "FireMage";
-            //Need to add a change the material to look like the firemage
+            Player.tag = "FireMage";
+            fireRobes();
 
-            //if a player is a Fire Mage they get the Fire Red color and the Fire Mage 'Tag'
-
+            //If the player has an energy orb they can use their ability.
             if (canUseAbility == true)
             {
                 if (Input.GetKeyDown(KeyCode.F) && hasOrb == true)
                 {
                     burnWall();
                     hasOrb = false;
+
                 }
 
                 if (Input.GetKeyDown(KeyCode.F) && hasOrb == false)
                 {
                     Debug.Log("You need to collect and energy orb to use an ability.");
+
                 }
             }
-            //if the player press F (placeholder input) while they can use their ability, they will call the burn wall function
-            //if they press f with no energy it will remind them to collect energy orbs
+
         }
 
+
+        //the timer for how long the hedge is burned down for.
         if (timerStart == true)
         {
             if (burnTimer > 0)
             {
                 burnTimer -= Time.deltaTime;
+
             }
             else if (burnTimer <= 0)
             {
@@ -68,10 +74,8 @@ public class fireMage : BaseMage
                 wall.SetActive(true);
                 wall = null;
 
-
             }
         }
-        // this starts timer for how long the hedge is burned down for.
 
     }
 
@@ -81,17 +85,15 @@ public class fireMage : BaseMage
     {
         if (isFireMage == true)
         {
+            //If the mage collides with the Hunter, they become the hunter with a brief no tagback delay.
             if (other.gameObject.tag == "Hunter")
             {
                 Player.GetComponent<fireMage>().isFireMage = false;
+                Invoke("BecomeHunter", 1.0f);
 
-                Invoke("BecomeHunter", 3.0f);
             }
-            //Calls the function BecomeHunter after 3 seconds.
 
-
-
-
+            //If the FireMage collides with an active interactable wall, the option to use their ability is unlocked.
             if (other.gameObject.CompareTag("iWall") && other.gameObject.activeInHierarchy == true)
             {
                 canUseAbility = true;
@@ -100,11 +102,11 @@ public class fireMage : BaseMage
             }
         }
     }
-    //if the player collides with a wall that is interactable (iWall placeholder name) then they unlock the option to use an ability
-    //reminder that tag has to be created and applied 
+
 
     private void OnTriggerExit(Collider other)
     {
+        //The FireMage can only use their ability next to a interactable hedge
         if (isFireMage == true)
         {
             canUseAbility = false;
@@ -112,10 +114,10 @@ public class fireMage : BaseMage
         }
     }
 
-    //if the player leaves the hedge that can be interacted with they can no longer use an ability
 
     private void OnTriggerStay(Collider other)
     {
+        //If the FireMage has an orb and is next to an interactable hedge they will use their abiliy 
         if (isFireMage == true)
         {
             if (other.gameObject.CompareTag("iWall") && useAbility == true)
@@ -124,6 +126,7 @@ public class fireMage : BaseMage
                 {
                     wall = other.gameObject;
                     wall.SetActive(false);
+
                 }
 
 
@@ -135,22 +138,33 @@ public class fireMage : BaseMage
         }
 
     }
-    //while the player is inside the hedge colider if they have all the variables needed to use their ability they can. This will burn down the hedge.
-    //The variables also reset.
+
 
     void burnWall()
     {
-
         useAbility = true;
+
     }
-    //Im not sure this is entirely needed. 
-    //Where burnWall is being called the action could just be put but maybe well need more for it later so I kept it sepeprated.
+
 
     void BecomeHunter()
     {
         Player.GetComponent<theHunter>().isTheHunter = true;
-    }
-    //this gives the player the Hunter 'Tag' which allows them to tag other players.
 
+    }
+
+
+    void fireRobes()
+    {
+        mats = Player.GetComponent<MeshRenderer>().materials;
+        mats[0] = fireC[0];
+        mats[1] = fireC[1];
+        mats[2] = fireC[2];
+        mats[3] = fireC[3];
+        mats[4] = fireC[4];
+        mats[5] = fireC[5];
+        Player.GetComponent<MeshRenderer>().materials = mats;
+
+    }
 
 }

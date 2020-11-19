@@ -6,56 +6,56 @@ public class LightningMage : BaseMage
 {
     private ThirdPersonMovement control;
 
-    public bool isLightningMage = false;
     //a bool to ensure the player using the script is the right type of mage to use the lightning ability
+    public bool isLightningMage = false;
 
-    private bool timerStart;
     //a bool to act as a switch to turn on the timer. 
+    private bool timerStart;
 
-    public bool hasOrb;
     //a bool to know if the player has the energy to use an ability 
+    public bool hasOrb;
 
-    [SerializeField] private bool canUseAbility;
-
-    [SerializeField] private bool useAbility;
-    //if the player has all the varibles needed to use the ability they can use the ability
 
     private float speedMultiplyer = 2.0f;
     private float speedtimer = 5.0f;
     private float controlSpeed;
 
-    // Start is called before the first frame update
+    //this allows the player to change color to match their mage
+    public Material[] lightningC = new Material[6];
+    Material[] mats;
+
+
+
     void Start()
     {
         control = this.GetComponent<ThirdPersonMovement>();
-       // controlSpeed = control.speed;
+        // controlSpeed = control.speed;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //if a player is a Fire Mage they get the Lightning Mage Robes and "LightningMage" tag.
         if (isLightningMage == true)
         {
+            lightningRobes();
+            Player.tag = "LightningMage";
 
-            //if a player is a lightning they get the Fire Red color and the Fire Mage 'Tag'
-
-            if (canUseAbility == true)
+            //If the player has an energy orb they can use their ability.
+            if (Input.GetKeyDown(KeyCode.F) && hasOrb == true)
             {
-                if (Input.GetKeyDown(KeyCode.F) && hasOrb == true)
-                {
-                    control.speed = controlSpeed * speedMultiplyer;
-                    hasOrb = false;
-                }
-
-                if (Input.GetKeyDown(KeyCode.F) && hasOrb == false)
-                {
-                    Debug.Log("You need to collect and energy orb to use an ability.");
-                }
+                control.speed = controlSpeed * speedMultiplyer;
+                hasOrb = false;
             }
-            //if the player press F (placeholder input) while they can use their ability
-            //if they press f with no energy it will remind them to collect energy orbs
+
+            if (Input.GetKeyDown(KeyCode.F) && hasOrb == false)
+            {
+                Debug.Log("You need to collect and energy orb to use an ability.");
+            }
+
         }
 
+        //the timer for how long the mage is speed up for.
         if (timerStart == true)
         {
             if (speedtimer > 0)
@@ -76,22 +76,34 @@ public class LightningMage : BaseMage
     {
         if (isLightningMage == true)
         {
+            //If the mage collides with the Hunter, they become the hunter with a brief no tagback delay.
             if (other.gameObject.tag == "Hunter")
             {
-                Player.GetComponent<fireMage>().isFireMage = false;
+                Player.GetComponent<LightningMage>().isLightningMage = false;
+                Invoke("BecomeHunter", 1.0f);
 
-                Invoke("BecomeHunter", 3.0f);
             }
-
-            //Calls the function BecomeHunter after 3 seconds.
         }
     }
 
     void BecomeHunter()
     {
         Player.GetComponent<theHunter>().isTheHunter = true;
-    }
-    //this gives the player the Hunter 'Tag' which allows them to tag other players.
 
-    //if the player leaves the hedge that can be interacted with they can no longer use an ability
+    }
+
+
+    void lightningRobes()
+    {
+        mats = Player.GetComponent<MeshRenderer>().materials;
+        mats[0] = lightningC[0];
+        mats[1] = lightningC[1];
+        mats[2] = lightningC[2];
+        mats[3] = lightningC[3];
+        mats[4] = lightningC[4];
+        mats[5] = lightningC[5];
+        Player.GetComponent<MeshRenderer>().materials = mats;
+
+    }
+
 }

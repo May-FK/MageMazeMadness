@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     public float cameraViewLimit = 60.0f;
 
     CharacterController characterController;
-    Vector3 moveDirection = Vector3.zero;
+    public Vector3 moveDirection = Vector3.zero;
     Vector2 rotation = Vector2.zero;
 
     [HideInInspector]

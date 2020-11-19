@@ -22,9 +22,9 @@ public class Spawner : MonoBehaviour
         {
             cooldownTime -= Time.deltaTime;
         }
-        else if ((cooldownTime <= 0) && (this.gameObject.activeSelf == false))
+        else if ((cooldownTime <= 0) && (spawned == false))
         {
-            this.gameObject.SetActive(true);
+            spawned = true;
         }
 
         if (spawned)
@@ -38,6 +38,21 @@ public class Spawner : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
+    {
+        if (spawned)
+        {
+            if ((other.CompareTag("LightningMage")) || (other.CompareTag("FireMage")) || (other.CompareTag("WindMage")))
+            {
+                other.GetComponent<LightningMage>().hasOrb = true;
+                other.GetComponent<fireMage>().hasOrb = true;
+                other.GetComponent<WindMage>().hasOrb = true;
+                spawned = false;
+                timeRemaining = cooldownTime;
+            }
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
     {
         if (spawned)
         {

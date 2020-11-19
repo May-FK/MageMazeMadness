@@ -27,7 +27,7 @@ public class PauseScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             Cursor.visible = true;
             PBGD.SetActive(true);
@@ -37,6 +37,8 @@ public class PauseScreen : MonoBehaviour
              MainMenu.SetActive(true);
              Volume.SetActive(false);
              Back.SetActive(false);
+            Cursor.lockState = CursorLockMode.None;
+            Debug.Log("Pause pressed");
         }
     }
     public void OnClick()
@@ -45,7 +47,7 @@ public class PauseScreen : MonoBehaviour
     }
     public void ResumeGame()
     {
-        Cursor.visible = false;
+       // Cursor.visible = false;
         PBGD.SetActive(false);
         Pause.SetActive(false);
         Resume.SetActive(false);
@@ -53,6 +55,8 @@ public class PauseScreen : MonoBehaviour
         MainMenu.SetActive(false);
         Volume.SetActive(false);
         Back.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Debug.Log("Game resumed");
     }
     public void VolumeClick()
     {

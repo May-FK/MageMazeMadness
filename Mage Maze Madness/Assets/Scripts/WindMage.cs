@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class WindMage : BaseMage
 {
-    public bool hasOrb;
     public bool isWindMage;
+    public bool hasOrb;
+
     public float jumpSpeed = 20.0f;
     public PlayerController pc;
 
-    public Material[] MageC = new Material[6];
+    public Material[] windC = new Material[6];
     Material[] mats;
-    // Start is called before the first frame update
+
+
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if (isWindMage == true)
@@ -40,15 +42,35 @@ public class WindMage : BaseMage
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (isWindMage == true)
+        {
+            //If the mage collides with the Hunter, they become the hunter with a brief no tagback delay.
+            if (other.gameObject.tag == "Hunter")
+            {
+                Player.GetComponent<WindMage>().isWindMage = false;
+                Invoke("BecomeHunter", 1.0f);
+
+            }
+        }
+    }
+
+    void BecomeHunter()
+    {
+        Player.GetComponent<theHunter>().isTheHunter = true;
+
+    }
+
     void WindRobes()
     {
         mats = Player.GetComponent<MeshRenderer>().materials;
-        mats[0] = MageC[0];
-        mats[1] = MageC[1];
-        mats[2] = MageC[2];
-        mats[3] = MageC[3];
-        mats[4] = MageC[4];
-        mats[5] = MageC[5];
+        mats[0] = windC[0];
+        mats[1] = windC[1];
+        mats[2] = windC[2];
+        mats[3] = windC[3];
+        mats[4] = windC[4];
+        mats[5] = windC[5];
         Player.GetComponent<MeshRenderer>().materials = mats;
 
     }

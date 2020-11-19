@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -26637,6 +26637,7 @@ GameObject:
   - component: {fileID: 3198229565009099254}
   - component: {fileID: 3773650163954273580}
   - component: {fileID: 3773650163954273581}
+  - component: {fileID: 3773650163954273584}
   - component: {fileID: 3773650163954273579}
   - component: {fileID: 3773650163954273583}
   - component: {fileID: 3773650163954273582}
@@ -26740,6 +26741,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.029373145, y: 0.051691975, z: 0.029373148}
   m_Center: {x: 4.6566126e-10, y: 0, z: 9.313225e-10}
+--- !u!114 &3773650163954273584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3773650163954273578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d5f9208a1e8f84f81cb1e141710660, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 3773650163954273578}
+  isWindMage: 0
+  hasOrb: 0
+  jumpSpeed: 20
+  pc: {fileID: 0}
+  windC:
+  - {fileID: -8043481242363185392, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
+  - {fileID: -4604951603897497505, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
+  - {fileID: 8747232881927002202, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
+  - {fileID: 7038688542854162588, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
+  - {fileID: -563372319191188345, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
+  - {fileID: 6689289790070600433, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
 --- !u!1 &4140582633543829941
 GameObject:
   m_ObjectHideFlags: 0
@@ -26866,6 +26891,7 @@ GameObject:
   - component: {fileID: 5969830329726627345}
   - component: {fileID: 5396947338539784911}
   - component: {fileID: 5396947338539784912}
+  - component: {fileID: 5396947338539784915}
   - component: {fileID: 5396947338539784910}
   - component: {fileID: 5396947338539784914}
   - component: {fileID: 5396947338539784913}
@@ -26969,6 +26995,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.029373145, y: 0.051691975, z: 0.029373148}
   m_Center: {x: 4.6566126e-10, y: 0, z: 9.313225e-10}
+--- !u!114 &5396947338539784915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5396947338539784909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d5f9208a1e8f84f81cb1e141710660, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 5396947338539784909}
+  isWindMage: 0
+  hasOrb: 0
+  jumpSpeed: 20
+  pc: {fileID: 0}
+  windC:
+  - {fileID: -8043481242363185392, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
+  - {fileID: -4604951603897497505, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
+  - {fileID: 8747232881927002202, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
+  - {fileID: 7038688542854162588, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
+  - {fileID: -563372319191188345, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
+  - {fileID: 6689289790070600433, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
 --- !u!23 &5581484073768979060
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27190,7 +27240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 5916373308490667938}
-  isTheHunter: 1
+  isTheHunter: 0
   hunterC:
   - {fileID: -8043481242363185392, guid: 4545764dac49cca408f33df6eddecc1d, type: 3}
   - {fileID: 3519176817472040157, guid: 4545764dac49cca408f33df6eddecc1d, type: 3}
@@ -27260,17 +27310,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 5916373308490667938}
-  hasOrb: 0
-  isWindMage: 0
+  isWindMage: 1
+  hasOrb: 1
   jumpSpeed: 20
   pc: {fileID: 0}
-  MageC:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  windC:
+  - {fileID: -8043481242363185392, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
+  - {fileID: -4604951603897497505, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
+  - {fileID: 8747232881927002202, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
+  - {fileID: 7038688542854162588, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
+  - {fileID: -563372319191188345, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
+  - {fileID: 6689289790070600433, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
 --- !u!23 &5969830329726627345
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27328,6 +27378,7 @@ GameObject:
   - component: {fileID: 6250339874223048819}
   - component: {fileID: 6250339874223048820}
   - component: {fileID: 6250339874223048818}
+  - component: {fileID: 6250339874223048823}
   - component: {fileID: 6250339874223048822}
   - component: {fileID: 6250339874223048821}
   m_Layer: 0
@@ -27336,7 +27387,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &6250339874223048818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27430,6 +27481,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.029373145, y: 0.051691975, z: 0.029373148}
   m_Center: {x: 4.6566126e-10, y: 0, z: 9.313225e-10}
+--- !u!114 &6250339874223048823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6250339874223048817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d5f9208a1e8f84f81cb1e141710660, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 6250339874223048817}
+  isWindMage: 0
+  hasOrb: 0
+  jumpSpeed: 20
+  pc: {fileID: 0}
+  windC:
+  - {fileID: -8043481242363185392, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
+  - {fileID: -4604951603897497505, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
+  - {fileID: 8747232881927002202, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
+  - {fileID: 7038688542854162588, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
+  - {fileID: -563372319191188345, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
+  - {fileID: 6689289790070600433, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
 --- !u!4 &6982535621500779106
 Transform:
   m_ObjectHideFlags: 0

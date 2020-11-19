@@ -45,6 +45,14 @@ public class theHunter : BaseMage
                 Player.GetComponent<theHunter>().isTheHunter = false;
 
             }
+            
+            if (other.gameObject.tag == "WindMage")
+            {
+                Debug.Log("You have knocked the wind out of the Wind Mage.");
+                Player.GetComponent<WindMage>().isWindMage = true;
+                Player.GetComponent<theHunter>().isTheHunter = false;
+
+            }
         }
 
     }

@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         rotation.y = transform.eulerAngles.y;
-        Cursor.lockState = CursorLockMode.Locked;
+       
     }
 
     void Update()

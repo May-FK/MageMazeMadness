@@ -28,6 +28,7 @@ public class fireMage : BaseMage
 
     //this allows the player to change color to match their mage
     public Material[] fireC = new Material[6];
+   
     Material[] mats;
 
 
@@ -89,6 +90,7 @@ public class fireMage : BaseMage
             if (other.gameObject.tag == "Hunter")
             {
                 Player.GetComponent<fireMage>().isFireMage = false;
+
                 Invoke("BecomeHunter", 1.0f);
 
             }

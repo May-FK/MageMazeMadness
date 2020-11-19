@@ -42,6 +42,26 @@ public class WindMage : BaseMage
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (isWindMage == true)
+        {
+            //If the mage collides with the Hunter, they become the hunter with a brief no tagback delay.
+            if (other.gameObject.tag == "Hunter")
+            {
+                Player.GetComponent<WindMage>().isWindMage = false;
+                Invoke("BecomeHunter", 1.0f);
+
+            }
+        }
+    }
+
+    void BecomeHunter()
+    {
+        Player.GetComponent<theHunter>().isTheHunter = true;
+
+    }
+
     void WindRobes()
     {
         mats = Player.GetComponent<MeshRenderer>().materials;

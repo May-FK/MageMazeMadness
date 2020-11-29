@@ -80,7 +80,7 @@ public class LightningMage : BaseMage
             if (other.gameObject.tag == "Hunter")
             {
                 Player.GetComponent<LightningMage>().isLightningMage = false;
-                Invoke("BecomeHunter", .5f);
+                Invoke("BecomeHunter", 1.0f);
 
             }
         }

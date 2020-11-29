@@ -91,7 +91,7 @@ public class fireMage : BaseMage
             {
                 Player.GetComponent<fireMage>().isFireMage = false;
 
-                Invoke("BecomeHunter", .5f);
+                Invoke("BecomeHunter", 1.0f);
 
             }
 

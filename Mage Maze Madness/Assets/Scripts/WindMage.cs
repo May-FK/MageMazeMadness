@@ -50,7 +50,7 @@ public class WindMage : BaseMage
             if (other.gameObject.tag == "Hunter")
             {
                 Player.GetComponent<WindMage>().isWindMage = false;
-                Invoke("BecomeHunter", .5f);
+                Invoke("BecomeHunter", 1.0f);
 
             }
         }

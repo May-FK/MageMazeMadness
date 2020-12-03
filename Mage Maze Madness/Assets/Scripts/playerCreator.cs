@@ -13,8 +13,28 @@ public class playerCreator : MonoBehaviourPunCallbacks
 
     [Range(0, 3)]
     public int charNum;
-    
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+    public void SetNum0()
+    {
+        charNum = 0;
+    }
+    public void SetNum1()
+    {
+        charNum = 1;
+    }
+    public void SetNum2()
+    {
+        charNum = 2;
+    }
+    public void SetNum3()
+    {
+        charNum = 3;
+    }
 
     public override void OnJoinedRoom()
     {

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16474,7 +16474,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1305460133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16495,7 +16495,7 @@ MonoBehaviour:
     type: 3}
   theLightningMage: {fileID: 9139620173865094099, guid: 597cfb865bce28341bcb7e3d2f0a8391,
     type: 3}
-  charNum: 0
+  charNum: 2
 --- !u!4 &1305460134
 Transform:
   m_ObjectHideFlags: 0

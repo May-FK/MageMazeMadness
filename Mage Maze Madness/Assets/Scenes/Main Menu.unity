@@ -290,6 +290,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1035840764}
+        m_MethodName: SetNum2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &112206580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -487,6 +498,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1784775074}
         m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1035840764}
+        m_MethodName: SetNum1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1413,6 +1435,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1007428991}
   m_CullTransparentMesh: 0
+--- !u!1 &1035840763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1035840765}
+  - component: {fileID: 1035840764}
+  m_Layer: 0
+  m_Name: Player Creator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1035840764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035840763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 548ca26add5d8734fb322edcc6fbcb94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theHunter: {fileID: 615069756671190218, guid: 4ce489da6597d234cba27c04f7b723d7,
+    type: 3}
+  theFireMage: {fileID: 8916242517191734200, guid: feed76279c87ca24fa322304746ac45e,
+    type: 3}
+  theWindMage: {fileID: 1847801656028160890, guid: fd780e1392df4e74396f6813c4dc3f1e,
+    type: 3}
+  theLightningMage: {fileID: 9139620173865094099, guid: 597cfb865bce28341bcb7e3d2f0a8391,
+    type: 3}
+  charNum: 2
+--- !u!4 &1035840765
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035840763}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -48.736145, y: 5.0799866, z: 2.889368}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1088752103
 GameObject:
   m_ObjectHideFlags: 0
@@ -2785,6 +2859,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1784775074}
         m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1035840764}
+        m_MethodName: SetNum3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

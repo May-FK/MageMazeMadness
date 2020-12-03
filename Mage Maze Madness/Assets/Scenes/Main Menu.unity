@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1914,13 +1914,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 548ca26add5d8734fb322edcc6fbcb94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theHunter: {fileID: 615069756671190218, guid: 4ce489da6597d234cba27c04f7b723d7,
+  theHunter: {fileID: 996046498564869299, guid: 4ce489da6597d234cba27c04f7b723d7,
     type: 3}
-  theFireMage: {fileID: 8916242517191734200, guid: feed76279c87ca24fa322304746ac45e,
+  theFireMage: {fileID: 5298990637735357676, guid: feed76279c87ca24fa322304746ac45e,
     type: 3}
-  theWindMage: {fileID: 1847801656028160890, guid: fd780e1392df4e74396f6813c4dc3f1e,
+  theWindMage: {fileID: 1612225012619343192, guid: fd780e1392df4e74396f6813c4dc3f1e,
     type: 3}
-  theLightningMage: {fileID: 9139620173865094099, guid: 597cfb865bce28341bcb7e3d2f0a8391,
+  theLightningMage: {fileID: 4480701706275561559, guid: 597cfb865bce28341bcb7e3d2f0a8391,
     type: 3}
   charNum: 2
 --- !u!4 &1035840765

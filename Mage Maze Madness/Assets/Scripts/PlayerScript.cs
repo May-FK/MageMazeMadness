@@ -16,11 +16,17 @@ public class PlayerScript : MonoBehaviourPunCallbacks
             PlayerController playerController = GetComponent<PlayerController>();
             CharacterController characterController = GetComponent<CharacterController>();
             Camera camera = GetComponentInChildren<Camera>();
+            //thePlayer = GetComponentInChildren<>();
+
+            
+
 
 
             camera.enabled = false;
             playerController.enabled = false;
             characterController.enabled = false;
+            
+
 
 
         }

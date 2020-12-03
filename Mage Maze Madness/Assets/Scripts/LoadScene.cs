@@ -105,6 +105,7 @@ public class LoadScene : MonoBehaviour
         Volume.SetActive(false);
         VolumeTitle.SetActive(false);
         BackBtn.SetActive(false);
+        Hunter.SetActive(false);
         FireText.SetActive(false);
         WindText.SetActive(false);
         LightText.SetActive(false);
@@ -125,6 +126,7 @@ public class LoadScene : MonoBehaviour
         Volume.SetActive(true);
         VolumeTitle.SetActive(true);
         BackBtn.SetActive(true);
+        Hunter.SetActive(false);
         FireText.SetActive(false);
         WindText.SetActive(false);
         LightText.SetActive(false);

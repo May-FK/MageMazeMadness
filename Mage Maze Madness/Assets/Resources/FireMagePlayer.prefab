@@ -143,6 +143,7 @@ GameObject:
   - component: {fileID: 8916242517786569214}
   - component: {fileID: 8916242517786569215}
   - component: {fileID: 8916242517786569212}
+  - component: {fileID: 8916242517786569213}
   m_Layer: 0
   m_Name: FireMageCharacter
   m_TagString: FireMage
@@ -331,6 +332,24 @@ CapsuleCollider:
   m_Height: 0.051691975
   m_Direction: 1
   m_Center: {x: 4.6566126e-10, y: 0, z: 9.313225e-10}
+--- !u!143 &8916242517786569213
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8916242517786569211}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 0.051691975
+  m_Radius: 0.014686575
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8916242517992678661
 GameObject:
   m_ObjectHideFlags: 0

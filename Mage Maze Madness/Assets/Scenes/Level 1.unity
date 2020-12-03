@@ -16487,15 +16487,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 548ca26add5d8734fb322edcc6fbcb94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theHunter: {fileID: 3732243620498469669, guid: c52d44ba98c58274cb3e864ec8b3753e,
+  theHunter: {fileID: 615069756671190218, guid: 4ce489da6597d234cba27c04f7b723d7,
     type: 3}
-  theFireMage: {fileID: 1805626386316751236, guid: bc9a1e68a1f79d24fb4a13e0a9cf86d7,
+  theFireMage: {fileID: 8916242517191734200, guid: feed76279c87ca24fa322304746ac45e,
     type: 3}
-  theWindMage: {fileID: 1987188789409554367, guid: 09959226558d05048a3bd4f040df8709,
+  theWindMage: {fileID: 1847801656028160890, guid: fd780e1392df4e74396f6813c4dc3f1e,
     type: 3}
-  theLightningMage: {fileID: 1460721507992630603, guid: e3658f4f5a65c2e429076a90bdacfb4d,
+  theLightningMage: {fileID: 9139620173865094099, guid: 597cfb865bce28341bcb7e3d2f0a8391,
     type: 3}
-  charNum: 0
+  charNum: 1
 --- !u!4 &1305460134
 Transform:
   m_ObjectHideFlags: 0

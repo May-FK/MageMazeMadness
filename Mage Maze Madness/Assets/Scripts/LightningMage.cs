@@ -29,7 +29,7 @@ public class LightningMage : BaseMage
     void Start()
     {
         control = this.GetComponent<ThirdPersonMovement>();
-        //controlSpeed = control.speed;
+        // controlSpeed = control.speed;
     }
 
     // Update is called once per frame

@@ -24,17 +24,31 @@ public class LightningMage : BaseMage
     public Material[] lightningC = new Material[6];
     Material[] mats;
 
+    public GameObject mana;
+    public GameObject noMana;
+
 
 
     void Start()
     {
         control = gameObject.GetComponentInParent<PlayerController>();
         controlSpeed = control.speed;
+        mana = GameObject.Find("Mana");
+        noMana = GameObject.Find("No Mana");
+        mana.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (hasOrb)
+        {
+            mana.SetActive(true);
+        }
+        else
+        {
+            mana.SetActive(false);
+        }
         //if a player is a Fire Mage they get the Lightning Mage Robes and "LightningMage" tag.
         if (isLightningMage == true)
         {

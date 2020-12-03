@@ -76,6 +76,7 @@ MonoBehaviour:
   moveDirection: {x: 0, y: 0, z: 0}
   canMove: 1
   jump: 0
+  manaNum: {fileID: 0}
 --- !u!114 &6207244720278272683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,6 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 6528767201388918907}
+  hasOrb: 0
   isTheHunter: 1
   hunterC:
   - {fileID: -8043481242363185392, guid: 4545764dac49cca408f33df6eddecc1d, type: 3}
@@ -250,8 +252,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 6528767201388918907}
-  isFireMage: 0
   hasOrb: 0
+  isFireMage: 0
   burnTimer: 5
   fireC:
   - {fileID: -8043481242363185392, guid: a75819742e3d8774c953dcc1842a50d2, type: 3}
@@ -273,8 +275,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 6528767201388918907}
-  isLightningMage: 0
   hasOrb: 0
+  isLightningMage: 0
   lightningC:
   - {fileID: -8043481242363185392, guid: d16c8d98c3c51f9438ddcffe445f7976, type: 3}
   - {fileID: -4604951603897497505, guid: d16c8d98c3c51f9438ddcffe445f7976, type: 3}
@@ -295,8 +297,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 6528767201388918907}
-  isWindMage: 0
   hasOrb: 0
+  isWindMage: 0
   jumpSpeed: 20
   windC:
   - {fileID: -8043481242363185392, guid: 07a4659855349fc428605da5cffb93a7, type: 3}

@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour
     public bool jump = false;
 
 
+
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -44,6 +46,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
+        
         //Basic Movement Controlls
         if (characterController.isGrounded)
         {

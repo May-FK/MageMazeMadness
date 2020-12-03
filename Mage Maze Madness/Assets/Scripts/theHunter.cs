@@ -14,6 +14,7 @@ public class theHunter : BaseMage
 
     private void Update()
     {
+        
         //if a player is the Hunter they get the Hunter Robes and "Hunter" tag.
         if (isTheHunter == true)
         {

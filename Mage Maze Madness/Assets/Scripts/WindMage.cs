@@ -13,15 +13,29 @@ public class WindMage : BaseMage
     public Material[] windC = new Material[6];
     Material[] mats;
 
+    public GameObject mana;
+    public GameObject noMana;
+
 
     void Start()
     {
         pc = gameObject.GetComponentInParent<PlayerController>();
+        mana = GameObject.Find("Mana");
+        noMana = GameObject.Find("No Mana");
+        mana.SetActive(true);
     }
 
 
     void Update()
     {
+        if (hasOrb)
+        {
+            mana.SetActive(true);
+        }
+        else
+        {
+            mana.SetActive(false);
+        }
         if (isWindMage == true)
         {
             WindRobes();

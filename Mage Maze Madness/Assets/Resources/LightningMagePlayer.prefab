@@ -186,8 +186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 6856766218612314917}
-  isLightningMage: 1
   hasOrb: 1
+  isLightningMage: 1
   lightningC:
   - {fileID: -8043481242363185392, guid: d16c8d98c3c51f9438ddcffe445f7976, type: 3}
   - {fileID: -4604951603897497505, guid: d16c8d98c3c51f9438ddcffe445f7976, type: 3}
@@ -195,6 +195,8 @@ MonoBehaviour:
   - {fileID: 7038688542854162588, guid: d16c8d98c3c51f9438ddcffe445f7976, type: 3}
   - {fileID: -563372319191188345, guid: d16c8d98c3c51f9438ddcffe445f7976, type: 3}
   - {fileID: 6689289790070600433, guid: d16c8d98c3c51f9438ddcffe445f7976, type: 3}
+  mana: {fileID: 0}
+  noMana: {fileID: 0}
 --- !u!114 &6856766218612315100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,8 +210,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 6856766218612314917}
-  isFireMage: 0
   hasOrb: 0
+  isFireMage: 0
   burnTimer: 5
   fireC:
   - {fileID: -8043481242363185392, guid: a75819742e3d8774c953dcc1842a50d2, type: 3}
@@ -218,6 +220,8 @@ MonoBehaviour:
   - {fileID: 7038688542854162588, guid: a75819742e3d8774c953dcc1842a50d2, type: 3}
   - {fileID: -563372319191188345, guid: a75819742e3d8774c953dcc1842a50d2, type: 3}
   - {fileID: 6689289790070600433, guid: a75819742e3d8774c953dcc1842a50d2, type: 3}
+  mana: {fileID: 0}
+  noMana: {fileID: 0}
 --- !u!114 &6856766218612315103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,8 +235,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 6856766218612314917}
-  isWindMage: 0
   hasOrb: 0
+  isWindMage: 0
   jumpSpeed: 20
   windC:
   - {fileID: -8043481242363185392, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
@@ -241,6 +245,8 @@ MonoBehaviour:
   - {fileID: 7038688542854162588, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
   - {fileID: -563372319191188345, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
   - {fileID: 6689289790070600433, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
+  mana: {fileID: 0}
+  noMana: {fileID: 0}
 --- !u!114 &6856766218612315102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,6 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 6856766218612314917}
+  hasOrb: 0
   isTheHunter: 0
   hunterC:
   - {fileID: -8043481242363185392, guid: 4545764dac49cca408f33df6eddecc1d, type: 3}

@@ -31,9 +31,26 @@ public class fireMage : BaseMage
    
     Material[] mats;
 
+    public GameObject mana;
+    public GameObject noMana;
+
+    private void Start()
+    {
+        mana = GameObject.Find("Mana");
+        noMana = GameObject.Find("No Mana");
+        mana.SetActive(true);
+    }
 
     void Update()
     {
+        if (hasOrb)
+        {
+            mana.SetActive(true);
+        }
+        else
+        {
+            mana.SetActive(false);
+        }
         //if a player is a Fire Mage they get the Fire Mage Robes and "Fire" tag.
         if (isFireMage == true)
         {

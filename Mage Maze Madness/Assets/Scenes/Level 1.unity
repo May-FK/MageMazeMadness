@@ -16495,7 +16495,7 @@ MonoBehaviour:
     type: 3}
   theLightningMage: {fileID: 9139620173865094099, guid: 597cfb865bce28341bcb7e3d2f0a8391,
     type: 3}
-  charNum: 1
+  charNum: 0
 --- !u!4 &1305460134
 Transform:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class WindMage : BaseMage
     public bool hasOrb;
 
     public float jumpSpeed = 20.0f;
-    public PlayerController pc;
+    private PlayerController pc;
 
     public Material[] windC = new Material[6];
     Material[] mats;
@@ -16,7 +16,7 @@ public class WindMage : BaseMage
 
     void Start()
     {
-
+        pc = gameObject.GetComponentInParent<PlayerController>();
     }
 
 
@@ -30,7 +30,8 @@ public class WindMage : BaseMage
             //If the player has an energy orb they can use their ability.
             if (Input.GetKeyDown(KeyCode.F) && hasOrb == true)
             {
-                pc.moveDirection.y = jumpSpeed;
+                pc.jump();
+                pc.characterController.Move(pc.moveDirection * Time.deltaTime);
                 hasOrb = false;
             }
 

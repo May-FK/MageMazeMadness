@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     [Tooltip("The view range of the camera.")]
     public float cameraViewLimit = 60.0f;
 
-    CharacterController characterController;
+    public CharacterController characterController;
     public Vector3 moveDirection = Vector3.zero;
     Vector2 rotation = Vector2.zero;
 
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetButton("Jump"))
             {
-                moveDirection.y = jumpSpeed;
+                jump();
             }
         }
 
@@ -75,5 +75,10 @@ public class PlayerController : MonoBehaviour
             playerCamera.transform.localRotation = Quaternion.Euler(rotation.x, 0, 0);
             transform.eulerAngles = new Vector2(0, rotation.y);
         }*/
+    }
+
+    public void jump()
+    {
+        moveDirection.y = jumpSpeed;
     }
 }

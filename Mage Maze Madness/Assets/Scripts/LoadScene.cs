@@ -105,6 +105,11 @@ public class LoadScene : MonoBehaviour
         Volume.SetActive(false);
         VolumeTitle.SetActive(false);
         BackBtn.SetActive(false);
+        FireText.SetActive(false);
+        WindText.SetActive(false);
+        LightText.SetActive(false);
+        HunterText.SetActive(false);
+        TipText.SetActive(false);
     }
     public void SettingsClicked()
     {
@@ -120,5 +125,10 @@ public class LoadScene : MonoBehaviour
         Volume.SetActive(true);
         VolumeTitle.SetActive(true);
         BackBtn.SetActive(true);
+        FireText.SetActive(false);
+        WindText.SetActive(false);
+        LightText.SetActive(false);
+        HunterText.SetActive(false);
+        TipText.SetActive(false);
     }
 }

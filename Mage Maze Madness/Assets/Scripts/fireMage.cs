@@ -12,7 +12,7 @@ public class fireMage : BaseMage
     private bool timerStart;
 
     //a bool to know if the player has the energy to use an ability 
-    [SerializeField] public bool hasOrb;
+    //[SerializeField] public bool hasOrb;
 
     //when the player is in a position where theye could use the ability 
     private bool canUseAbility;

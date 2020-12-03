@@ -7,6 +7,7 @@ public class BaseMage : MonoBehaviour
 {
     //these are the variables that all players will use.
     public GameObject Player;
+    public bool hasOrb;
 
 
     #region CharacterSelect

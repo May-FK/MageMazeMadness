@@ -13,7 +13,7 @@ public class LightningMage : BaseMage
     private bool timerStart;
 
     //a bool to know if the player has the energy to use an ability 
-    public bool hasOrb;
+    //public bool hasOrb;
 
 
     private float speedMultiplyer = 2.0f;

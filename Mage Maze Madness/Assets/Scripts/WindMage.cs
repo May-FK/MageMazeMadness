@@ -5,7 +5,7 @@ using UnityEngine;
 public class WindMage : BaseMage
 {
     public bool isWindMage;
-    public bool hasOrb;
+    //public bool hasOrb;
 
     public float jumpSpeed = 20.0f;
     private PlayerController pc;

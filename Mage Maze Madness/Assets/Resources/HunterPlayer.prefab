@@ -73,6 +73,7 @@ MonoBehaviour:
   playerCamera: {fileID: 265089942489989964}
   cameraSpeed: 2
   cameraViewLimit: 60
+  characterController: {fileID: 0}
   moveDirection: {x: 0, y: 0, z: 0}
   canMove: 1
 --- !u!114 &6207244720278272683
@@ -142,7 +143,6 @@ GameObject:
   - component: {fileID: 6528767201388918909}
   - component: {fileID: 6528767201388918908}
   - component: {fileID: 6528767201388918911}
-  - component: {fileID: 6528767201388918898}
   m_Layer: 0
   m_Name: HunterCharacter
   m_TagString: Hunter
@@ -297,7 +297,6 @@ MonoBehaviour:
   isWindMage: 0
   hasOrb: 0
   jumpSpeed: 20
-  pc: {fileID: 5979645511195428506}
   windC:
   - {fileID: -8043481242363185392, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
   - {fileID: -4604951603897497505, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
@@ -332,24 +331,6 @@ CapsuleCollider:
   m_Height: 0.051691975
   m_Direction: 1
   m_Center: {x: 4.6566126e-10, y: 0, z: 9.313225e-10}
---- !u!143 &6528767201388918898
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6528767201388918907}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 0.051691975
-  m_Radius: 0.014686575
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8590121278113626427
 GameObject:
   m_ObjectHideFlags: 0

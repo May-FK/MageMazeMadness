@@ -17,6 +17,7 @@ public class LoadScene : MonoBehaviour
     public GameObject Volume;
     public GameObject BackBtn;
     public GameObject Settings;
+    public GameObject Hunter;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,7 @@ public class LoadScene : MonoBehaviour
         Settings.SetActive(true);
         Volume.SetActive(false);
         BackBtn.SetActive(false);
+        Hunter.SetActive(false);
     }
 
     // Update is called once per frame
@@ -52,6 +54,7 @@ public class LoadScene : MonoBehaviour
         Settings.SetActive(false);
         Volume.SetActive(false);
         BackBtn.SetActive(false);
+        Hunter.SetActive(true);
     }
     public void Click()
     {

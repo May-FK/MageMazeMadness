@@ -6,13 +6,36 @@ using Photon.Realtime;
 using Photon.Pun.Demo.PunBasics;
 public class playerCreator : MonoBehaviourPunCallbacks
 {
-    public GameObject theMage;
+    public GameObject theHunter;
+    public GameObject theFireMage;
+    public GameObject theWindMage;
+    public GameObject theLightningMage;
+
+    [Range(0, 3)]
+    public int charNum;
+
 
 
     public override void OnJoinedRoom()
     {
-        PhotonNetwork.Instantiate(this.theMage.name, new Vector3(0f, 10f, 0f), Quaternion.identity);
-        
+        if (charNum == 0)
+        {
+            PhotonNetwork.Instantiate(this.theHunter.name, new Vector3(1f, 10f, 1f), Quaternion.identity);
+        }
+        else if (charNum == 1)
+        {
+            PhotonNetwork.Instantiate(this.theFireMage.name, new Vector3(-1f, 10f, 0f), Quaternion.identity);
+        }
+        if (charNum == 2)
+        {
+            PhotonNetwork.Instantiate(this.theWindMage.name, new Vector3(1f, 10f, -1f), Quaternion.identity);
+        }
+        if (charNum == 3)
+        {
+            PhotonNetwork.Instantiate(this.theLightningMage.name, new Vector3(-1f, 10f, -1f), Quaternion.identity);
+        }
+
+
     }
 
 }

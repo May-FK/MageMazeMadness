@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5010325946978644322}
   - component: {fileID: 938673945997368956}
   - component: {fileID: 4439547977622249590}
+  - component: {fileID: 3418798299179771271}
   m_Layer: 0
   m_Name: WindMageCharacter
   m_TagString: WindMage
@@ -150,6 +151,7 @@ MonoBehaviour:
   isWindMage: 1
   hasOrb: 1
   jumpSpeed: 20
+  pc: {fileID: 4888209441377681706}
   windC:
   - {fileID: -8043481242363185392, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
   - {fileID: -4604951603897497505, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
@@ -205,6 +207,24 @@ CapsuleCollider:
   m_Height: 0.051691975
   m_Direction: 1
   m_Center: {x: 4.6566126e-10, y: 0, z: 9.313225e-10}
+--- !u!143 &3418798299179771271
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587048653781904593}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 0.051691975
+  m_Radius: 0.014686575
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1847801656028160890
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,7 +298,6 @@ MonoBehaviour:
   playerCamera: {fileID: 1333160710522406140}
   cameraSpeed: 2
   cameraViewLimit: 60
-  characterController: {fileID: 0}
   moveDirection: {x: 0, y: 0, z: 0}
   canMove: 1
 --- !u!114 &5118639288670354715

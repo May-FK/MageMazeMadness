@@ -234,7 +234,6 @@ MonoBehaviour:
   isWindMage: 0
   hasOrb: 0
   jumpSpeed: 20
-  pc: {fileID: 2640421484263238019}
   windC:
   - {fileID: -8043481242363185392, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
   - {fileID: -4604951603897497505, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
@@ -324,7 +323,7 @@ GameObject:
   - component: {fileID: 335940305687851925}
   m_Layer: 0
   m_Name: LightningMagePlayer
-  m_TagString: LightningMage
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -381,6 +380,7 @@ MonoBehaviour:
   playerCamera: {fileID: 8499021839956503637}
   cameraSpeed: 2
   cameraViewLimit: 60
+  characterController: {fileID: 0}
   moveDirection: {x: 0, y: 0, z: 0}
   canMove: 1
 --- !u!114 &2340691613801190834

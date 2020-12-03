@@ -73,6 +73,7 @@ MonoBehaviour:
   playerCamera: {fileID: 8916242517992678660}
   cameraSpeed: 2
   cameraViewLimit: 60
+  characterController: {fileID: 0}
   moveDirection: {x: 0, y: 0, z: 0}
   canMove: 1
 --- !u!114 &8916242517191734205
@@ -276,7 +277,6 @@ MonoBehaviour:
   isWindMage: 0
   hasOrb: 0
   jumpSpeed: 20
-  pc: {fileID: 8916242517191734204}
   windC:
   - {fileID: -8043481242363185392, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
   - {fileID: -4604951603897497505, guid: 07a4659855349fc428605da5cffb93a7, type: 3}

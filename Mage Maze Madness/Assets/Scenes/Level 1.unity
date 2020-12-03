@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 5291580}
   - component: {fileID: 5291579}
   m_Layer: 0
-  m_Name: InvisableWall
+  m_Name: InvisibleWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4917,7 +4917,7 @@ GameObject:
   - component: {fileID: 399577331}
   - component: {fileID: 399577330}
   m_Layer: 0
-  m_Name: InvisableWall (1)
+  m_Name: InvisibleWall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21136,7 +21136,7 @@ GameObject:
   - component: {fileID: 1587784858}
   - component: {fileID: 1587784857}
   m_Layer: 0
-  m_Name: InvisableWall (2)
+  m_Name: InvisibleWall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21287,7 +21287,7 @@ GameObject:
   - component: {fileID: 1593983075}
   - component: {fileID: 1593983074}
   m_Layer: 0
-  m_Name: InvisableWall (3)
+  m_Name: InvisibleWall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

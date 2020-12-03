@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LightningMage : BaseMage
 {
-    private ThirdPersonMovement control;
+    private PlayerController control;
 
     //a bool to ensure the player using the script is the right type of mage to use the lightning ability
     public bool isLightningMage = false;
@@ -28,8 +28,8 @@ public class LightningMage : BaseMage
 
     void Start()
     {
-        control = this.GetComponent<ThirdPersonMovement>();
-        // controlSpeed = control.speed;
+        control = gameObject.GetComponentInParent<PlayerController>();
+        controlSpeed = control.speed;
     }
 
     // Update is called once per frame
@@ -45,6 +45,7 @@ public class LightningMage : BaseMage
             if (Input.GetKeyDown(KeyCode.F) && hasOrb == true)
             {
                 control.speed = controlSpeed * speedMultiplyer;
+                timerStart = true;
                 hasOrb = false;
             }
 
@@ -58,6 +59,7 @@ public class LightningMage : BaseMage
         //the timer for how long the mage is speed up for.
         if (timerStart == true)
         {
+            Debug.Log("Timer is running.");
             if (speedtimer > 0)
             {
                 speedtimer -= Time.deltaTime;

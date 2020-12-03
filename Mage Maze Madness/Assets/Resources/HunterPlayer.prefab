@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1478145246124454677}
   m_Layer: 0
   m_Name: HunterPlayer
-  m_TagString: Untagged
+  m_TagString: Hunter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

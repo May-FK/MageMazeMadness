@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 7.5f;
 
     [Tooltip("Speed the player will move while jumping.")]
-    public float jumpSpeed = 8.0f;
+    public float jumpSpeed = 20.0f;
 
     [Tooltip("The pressure of gravity for the player.")]
     public float gravity = 20.0f;
@@ -52,11 +52,6 @@ public class PlayerController : MonoBehaviour
             float curSpeedY = speed * Input.GetAxis("Horizontal");
 
             moveDirection = (forward * curSpeedX) + (right * curSpeedY);
-
-            if (Input.GetButton("Jump"))
-            {
-                jump();
-            }
         }
 
         //Gravity

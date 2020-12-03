@@ -617,7 +617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1085,8 +1085,15 @@ MonoBehaviour:
   quit: {fileID: 0}
   Back: {fileID: 0}
   Volume: {fileID: 0}
+  VolumeTitle: {fileID: 0}
   BackBtn: {fileID: 0}
   Settings: {fileID: 0}
+  Hunter: {fileID: 0}
+  FireText: {fileID: 0}
+  WindText: {fileID: 0}
+  LightText: {fileID: 0}
+  HunterText: {fileID: 0}
+  TipText: {fileID: 0}
 --- !u!4 &1391432200
 Transform:
   m_ObjectHideFlags: 0

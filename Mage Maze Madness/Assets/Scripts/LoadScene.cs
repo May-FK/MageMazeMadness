@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
+
 public class LoadScene : MonoBehaviour
 {
     public GameObject cyc;
@@ -15,9 +16,16 @@ public class LoadScene : MonoBehaviour
     public GameObject quit;
     public GameObject Back;
     public GameObject Volume;
+    public GameObject VolumeTitle;
     public GameObject BackBtn;
     public GameObject Settings;
     public GameObject Hunter;
+    public GameObject FireText;
+    public GameObject WindText;
+    public GameObject LightText;
+    public GameObject HunterText;
+    public GameObject TipText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,8 +40,15 @@ public class LoadScene : MonoBehaviour
         quit.SetActive(true);
         Settings.SetActive(true);
         Volume.SetActive(false);
+        VolumeTitle.SetActive(false);
         BackBtn.SetActive(false);
         Hunter.SetActive(false);
+        FireText.SetActive(false);
+        WindText.SetActive(false);
+        LightText.SetActive(false);
+        HunterText.SetActive(false);
+        TipText.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -53,8 +68,15 @@ public class LoadScene : MonoBehaviour
         quit.SetActive(false);
         Settings.SetActive(false);
         Volume.SetActive(false);
+        VolumeTitle.SetActive(false);
         BackBtn.SetActive(false);
         Hunter.SetActive(true);
+        FireText.SetActive(true);
+        WindText.SetActive(true);
+        LightText.SetActive(true);
+        HunterText.SetActive(true);
+        TipText.SetActive(true);
+
     }
     public void Click()
     {
@@ -81,6 +103,7 @@ public class LoadScene : MonoBehaviour
         quit.SetActive(true);
         Settings.SetActive(true);
         Volume.SetActive(false);
+        VolumeTitle.SetActive(false);
         BackBtn.SetActive(false);
     }
     public void SettingsClicked()
@@ -95,6 +118,7 @@ public class LoadScene : MonoBehaviour
         quit.SetActive(false);
         Settings.SetActive(false);
         Volume.SetActive(true);
+        VolumeTitle.SetActive(true);
         BackBtn.SetActive(true);
     }
 }

@@ -76,7 +76,6 @@ MonoBehaviour:
   moveDirection: {x: 0, y: 0, z: 0}
   canMove: 1
   jump: 0
-  manaNum: {fileID: 0}
 --- !u!114 &6207244720278272683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,6 +261,8 @@ MonoBehaviour:
   - {fileID: 7038688542854162588, guid: a75819742e3d8774c953dcc1842a50d2, type: 3}
   - {fileID: -563372319191188345, guid: a75819742e3d8774c953dcc1842a50d2, type: 3}
   - {fileID: 6689289790070600433, guid: a75819742e3d8774c953dcc1842a50d2, type: 3}
+  mana: {fileID: 0}
+  noMana: {fileID: 0}
 --- !u!114 &6528767201388918904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,6 +285,8 @@ MonoBehaviour:
   - {fileID: 7038688542854162588, guid: d16c8d98c3c51f9438ddcffe445f7976, type: 3}
   - {fileID: -563372319191188345, guid: d16c8d98c3c51f9438ddcffe445f7976, type: 3}
   - {fileID: 6689289790070600433, guid: d16c8d98c3c51f9438ddcffe445f7976, type: 3}
+  mana: {fileID: 0}
+  noMana: {fileID: 0}
 --- !u!114 &6528767201388918909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,6 +310,8 @@ MonoBehaviour:
   - {fileID: 7038688542854162588, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
   - {fileID: -563372319191188345, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
   - {fileID: 6689289790070600433, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
+  mana: {fileID: 0}
+  noMana: {fileID: 0}
 --- !u!65 &6528767201388918908
 BoxCollider:
   m_ObjectHideFlags: 0

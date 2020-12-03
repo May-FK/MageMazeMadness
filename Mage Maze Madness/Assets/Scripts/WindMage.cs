@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class WindMage : BaseMage
 {
@@ -14,18 +13,16 @@ public class WindMage : BaseMage
     public Material[] windC = new Material[6];
     Material[] mats;
 
-    public Text manaText;
-    //public GameObject mana;
-    //public GameObject noMana;
+    public GameObject mana;
+    public GameObject noMana;
 
 
     void Start()
     {
         pc = gameObject.GetComponentInParent<PlayerController>();
-        //mana = GameObject.Find("Mana");
-        //noMana = GameObject.Find("No Mana");
-        //mana.SetActive(true);
-        manaText.text = "You have mana";
+        mana = GameObject.Find("Mana");
+        noMana = GameObject.Find("No Mana");
+        mana.SetActive(true);
     }
 
 
@@ -33,11 +30,11 @@ public class WindMage : BaseMage
     {
         if (hasOrb)
         {
-            manaText.text = "You have mana";
+            mana.SetActive(true);
         }
         else
         {
-            manaText.text = "No mana";
+            mana.SetActive(false);
         }
         if (isWindMage == true)
         {

@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class LightningMage : BaseMage
 {
@@ -25,9 +24,8 @@ public class LightningMage : BaseMage
     public Material[] lightningC = new Material[6];
     Material[] mats;
 
-    public Text manaText;
-    //public GameObject mana;
-    //public GameObject noMana;
+    public GameObject mana;
+    public GameObject noMana;
 
 
 
@@ -35,24 +33,21 @@ public class LightningMage : BaseMage
     {
         control = gameObject.GetComponentInParent<PlayerController>();
         controlSpeed = control.speed;
-        //mana = GameObject.Find("Mana");
-        //noMana = GameObject.Find("No Mana");
-        //mana.SetActive(true);
-        manaText.text = "You have mana";
+        mana = GameObject.Find("Mana");
+        noMana = GameObject.Find("No Mana");
+        mana.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (hasOrb == true)
+        if (hasOrb)
         {
-            //mana.SetActive(true);
-            manaText.text = "You have mana";
+            mana.SetActive(true);
         }
         else
         {
-            //mana.SetActive(false);
-            manaText.text = "No mana";
+            mana.SetActive(false);
         }
         //if a player is a Fire Mage they get the Lightning Mage Robes and "LightningMage" tag.
         if (isLightningMage == true)

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class fireMage : BaseMage
 {
@@ -31,29 +31,25 @@ public class fireMage : BaseMage
    
     Material[] mats;
 
-    public Text manaText;
-    //public GameObject mana;
-    //public GameObject noMana;
+    public GameObject mana;
+    public GameObject noMana;
 
     private void Start()
     {
-        //mana = GameObject.Find("Mana");
-        //noMana = GameObject.Find("No Mana");
-        //mana.SetActive(true);
-        manaText.text = "You have mana";
+        mana = GameObject.Find("Mana");
+        noMana = GameObject.Find("No Mana");
+        mana.SetActive(true);
     }
 
     void Update()
     {
-        if (hasOrb == true)
+        if (hasOrb)
         {
-            //mana.SetActive(true);
-            manaText.text = "You have mana";
+            mana.SetActive(true);
         }
         else
         {
-            //mana.SetActive(false);
-            manaText.text = "No mana";
+            mana.SetActive(false);
         }
         //if a player is a Fire Mage they get the Fire Mage Robes and "Fire" tag.
         if (isFireMage == true)

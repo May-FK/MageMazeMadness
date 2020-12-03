@@ -30,8 +30,8 @@ public class WindMage : BaseMage
             //If the player has an energy orb they can use their ability.
             if (Input.GetKeyDown(KeyCode.F) && hasOrb == true)
             {
-                pc.jump();
-                pc.characterController.Move(pc.moveDirection * Time.deltaTime);
+                pc.jump = true;
+                //pc.characterController.Move(pc.moveDirection * Time.deltaTime);
                 hasOrb = false;
             }
 

@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 7.5f;
 
     [Tooltip("Speed the player will move while jumping.")]
-    public float jumpSpeed = 20.0f;
+    private float jumpSpeed = 30.0f;
 
     [Tooltip("The pressure of gravity for the player.")]
     public float gravity = 20.0f;
@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector]
     public bool canMove = true;
+
+    public bool jump = false;
 
 
     void Start()
@@ -52,11 +54,14 @@ public class PlayerController : MonoBehaviour
             float curSpeedY = speed * Input.GetAxis("Horizontal");
 
             moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+            Jump();
+            //jump = false;
         }
 
         //Gravity
         moveDirection.y -= gravity * Time.deltaTime;
 
+        
         //Movement Speed
         characterController.Move(moveDirection * Time.deltaTime);
 
@@ -72,8 +77,12 @@ public class PlayerController : MonoBehaviour
         }*/
     }
 
-    public void jump()
+    public void Jump()
     {
-        moveDirection.y = jumpSpeed;
+        if (jump)
+        {
+            moveDirection.y = jumpSpeed;
+            jump = false;
+        }
     }
 }

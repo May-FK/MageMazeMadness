@@ -93,7 +93,8 @@ public class fireMage : BaseMage
             {
                 timerStart = false;
                 burnTimer = 5.0f;
-                this.photonView.RPC("WallLoad", RpcTarget.All);
+                wall.SetActive(true);
+                wall = null;
             }
         }
 
@@ -122,8 +123,7 @@ public class fireMage : BaseMage
     [PunRPC]
     void WallLoad()
     {
-        wall.SetActive(true);
-        wall = null;
+        
     }
 
     [PunRPC]
@@ -153,7 +153,7 @@ public class fireMage : BaseMage
                 if (wall == null)
                 {
                     wall = other.gameObject;
-                    this.photonView.RPC("Walltrigger", RpcTarget.All, wall);
+                    wall.SetActive(false);
                 }
 
 
@@ -170,7 +170,7 @@ public class fireMage : BaseMage
     void WallTrigger(GameObject wall)
     {
         
-        wall.SetActive(false);
+        
     }
 
     [PunRPC]

@@ -1,9 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
-using Photon.Realtime;
-using Photon.Pun.Demo.PunBasics;
 
 public class WindMage : BaseMage
 {
@@ -41,9 +38,8 @@ public class WindMage : BaseMage
         }
         if (isWindMage == true)
         {
-            this.photonView.RPC("WindRobes", RpcTarget.AllBuffered);
-            //WindRobes();
-            //Player.tag = "WindMage";
+            WindRobes();
+            Player.tag = "WindMage";
 
             //If the player has an energy orb they can use their ability.
             if (Input.GetKeyDown(KeyCode.F) && hasOrb == true)
@@ -68,24 +64,19 @@ public class WindMage : BaseMage
             //If the mage collides with the Hunter, they become the hunter with a brief no tagback delay.
             if (other.gameObject.tag == "Hunter")
             {
-                this.photonView.RPC("HunterTrigger", RpcTarget.AllBuffered);
+                Player.GetComponent<WindMage>().isWindMage = false;
+                Invoke("BecomeHunter", 1.0f);
+
             }
         }
-    }
-
-    [PunRPC]
-    void HunterTrigger()
-    {
-        Player.GetComponent<WindMage>().isWindMage = false;
-        Invoke("BecomeHunter", 1.0f);
     }
 
     void BecomeHunter()
     {
         Player.GetComponent<theHunter>().isTheHunter = true;
+
     }
 
-    [PunRPC]
     void WindRobes()
     {
         mats = Player.GetComponent<MeshRenderer>().materials;
@@ -96,6 +87,6 @@ public class WindMage : BaseMage
         mats[4] = windC[4];
         mats[5] = windC[5];
         Player.GetComponent<MeshRenderer>().materials = mats;
-        Player.tag = "WindMage";
+
     }
 }

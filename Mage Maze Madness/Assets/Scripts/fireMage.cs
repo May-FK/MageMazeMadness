@@ -108,7 +108,7 @@ public class fireMage : BaseMage
             //If the mage collides with the Hunter, they become the hunter with a brief no tagback delay.
             if (other.gameObject.tag == "Hunter")
             {
-                this.photonView.RPC("HunterTrigger", RpcTarget.All);
+                this.photonView.RPC("HunterTrigger2", RpcTarget.All);
             }
 
             //If the FireMage collides with an active interactable wall, the option to use their ability is unlocked.
@@ -127,7 +127,7 @@ public class fireMage : BaseMage
     }
 
     [PunRPC]
-    void HunterTrigger()
+    void HunterTrigger2()
     {
         Player.GetComponent<fireMage>().isFireMage = false;
         Invoke("BecomeHunter", 1.0f);

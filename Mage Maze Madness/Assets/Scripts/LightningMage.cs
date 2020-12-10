@@ -99,13 +99,13 @@ public class LightningMage : BaseMage
             //If the mage collides with the Hunter, they become the hunter with a brief no tagback delay.
             if (other.gameObject.tag == "Hunter")
             {
-                this.photonView.RPC("HunterTrigger", RpcTarget.All);
+                this.photonView.RPC("HunterTrigger1", RpcTarget.All);
             }
         }
     }
 
     [PunRPC]
-    void HunterTrigger()
+    void HunterTrigger1()
     {
         Player.GetComponent<LightningMage>().isLightningMage = false;
         Invoke("BecomeHunter", 1.0f);

@@ -16,12 +16,16 @@ public class PlayerScript : MonoBehaviourPunCallbacks
             PlayerController playerController = GetComponent<PlayerController>();
             CharacterController characterController = GetComponent<CharacterController>();
             Camera camera = GetComponentInChildren<Camera>();
+            theHunter hunter = GetComponentInChildren<theHunter>();
+            WindMage wind = GetComponentInChildren<WindMage>();
+            fireMage fire = GetComponentInChildren<fireMage>();
+            LightningMage lightning = GetComponentInChildren<LightningMage>();
             //thePlayer = GetComponentInChildren<>();
 
-            
-
-
-
+            hunter.enabled = false;
+            wind.enabled = false;
+            fire.enabled = false;
+            lightning.enabled = false;
             camera.enabled = false;
             playerController.enabled = false;
             characterController.enabled = false;

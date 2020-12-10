@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16615,58 +16615,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.010000003, y: 0.053176694, z: 0.018786304}
   m_Center: {x: -0.00000000721775, y: 0.021588348, z: -0.00017021132}
---- !u!1 &1305460132
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1305460134}
-  - component: {fileID: 1305460133}
-  m_Layer: 0
-  m_Name: Player Creator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1305460133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1305460132}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 548ca26add5d8734fb322edcc6fbcb94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  theHunter: {fileID: 996046498564869299, guid: 4ce489da6597d234cba27c04f7b723d7,
-    type: 3}
-  theFireMage: {fileID: 5298990637735357676, guid: feed76279c87ca24fa322304746ac45e,
-    type: 3}
-  theWindMage: {fileID: 1612225012619343192, guid: fd780e1392df4e74396f6813c4dc3f1e,
-    type: 3}
-  theLightningMage: {fileID: 4480701706275561559, guid: 597cfb865bce28341bcb7e3d2f0a8391,
-    type: 3}
-  charNum: 2
---- !u!4 &1305460134
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1305460132}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -48.736122, y: 5.079998, z: 2.889368}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1312639249
 GameObject:
   m_ObjectHideFlags: 0

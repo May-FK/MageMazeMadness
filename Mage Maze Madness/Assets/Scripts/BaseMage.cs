@@ -43,7 +43,6 @@ public class BaseMage : MonoBehaviourPunCallbacks
     #endregion
     //We only need this if we want to do a physical character select instead of a UI Character Select.
 
-    //tbh this script is kinda useless. I was learning about inheritance in class and wanted to try it out.
 }
 
 

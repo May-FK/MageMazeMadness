@@ -86,6 +86,6 @@ public class PauseScreen : MonoBehaviour
     }
     public void MainClicked()
     {
-        SceneManager.LoadScene("Main Menu");
+        Application.Quit();
     }
     }

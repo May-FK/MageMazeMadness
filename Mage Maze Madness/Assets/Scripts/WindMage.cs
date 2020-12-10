@@ -96,6 +96,6 @@ public class WindMage : BaseMage
         mats[4] = windC[4];
         mats[5] = windC[5];
         Player.GetComponent<MeshRenderer>().materials = mats;
-        Player.tag = "WindMage"
+        Player.tag = "WindMage";
     }
 }

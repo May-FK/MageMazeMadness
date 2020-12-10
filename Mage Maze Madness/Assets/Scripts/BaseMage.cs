@@ -2,12 +2,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using Photon.Pun;
+using Photon.Realtime;
+using Photon.Pun.Demo.PunBasics;
 
-public class BaseMage : MonoBehaviour
+public class BaseMage : MonoBehaviourPunCallbacks
 {
     //these are the variables that all players will use.
     public GameObject Player;
     public bool hasOrb;
+
+    //PhotonView pv = PhotonView.Get(this);
 
 
     #region CharacterSelect

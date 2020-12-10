@@ -41,7 +41,7 @@ public class WindMage : BaseMage
         }
         if (isWindMage == true)
         {
-            this.photonView.RPC("WindRobes", RpcTarget.All);
+            this.photonView.RPC("WindRobes", RpcTarget.AllBuffered);
             //WindRobes();
             //Player.tag = "WindMage";
 
@@ -68,7 +68,7 @@ public class WindMage : BaseMage
             //If the mage collides with the Hunter, they become the hunter with a brief no tagback delay.
             if (other.gameObject.tag == "Hunter")
             {
-                this.photonView.RPC("HunterTrigger", RpcTarget.All);
+                this.photonView.RPC("HunterTrigger", RpcTarget.AllBuffered);
             }
         }
     }

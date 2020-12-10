@@ -21,9 +21,8 @@ public class theHunter : BaseMage
         //if a player is the Hunter they get the Hunter Robes and "Hunter" tag.
         if (isTheHunter == true)
         {
-            Player.tag = "Hunter";
-            hunterRobes();
-
+            //hunterRobes();
+            this.photonView.RPC("hunterRobes", RpcTarget.AllBuffered);
         }
 
     }
@@ -37,42 +36,57 @@ public class theHunter : BaseMage
             if (other.gameObject.tag == "FireMage")
             {
                 Debug.Log("You have stolen the flames of magic from the Fire Mage.");
-                Player.GetComponent<fireMage>().isFireMage = true;
-                Player.GetComponent<theHunter>().isTheHunter = false;
-
+                this.photonView.RPC("BecomeFire", RpcTarget.AllBuffered);
             }
 
             if (other.gameObject.tag == "LightningMage")
             {
                 Debug.Log("You have zapped the electricity of out the Lightning Mage.");
-                Player.GetComponent<LightningMage>().isLightningMage = true;
-                Player.GetComponent<theHunter>().isTheHunter = false;
-
+                this.photonView.RPC("BecomeLightning", RpcTarget.AllBuffered);
             }
             
             if (other.gameObject.tag == "WindMage")
             {
                 Debug.Log("You have knocked the wind out of the Wind Mage.");
-                Player.GetComponent<WindMage>().isWindMage = true;
-                Player.GetComponent<theHunter>().isTheHunter = false;
-
+                this.photonView.RPC("BecomeWind", RpcTarget.AllBuffered);                
             }
         }
 
     }
 
+    [PunRPC]
+    void BecomeFire()
+    {
+        Player.GetComponent<fireMage>().isFireMage = true;
+        Player.GetComponent<theHunter>().isTheHunter = false;
+    }
 
+    [PunRPC]
+    void BecomeWind()
+    {
+        Player.GetComponent<WindMage>().isWindMage = true;
+        Player.GetComponent<theHunter>().isTheHunter = false;
+    }
+
+    [PunRPC]
+    void BecomeLightning()
+    {
+        Player.GetComponent<LightningMage>().isLightningMage = true;
+        Player.GetComponent<theHunter>().isTheHunter = false;
+    }
+
+    [PunRPC]
     void hunterRobes()
     {
-        mats = Player.GetComponent<MeshRenderer>().materials;
+        this.Player.tag = "Hunter";
+        mats = this.Player.GetComponent<MeshRenderer>().materials;
         mats[0] = hunterC[0];
         mats[1] = hunterC[1];
         mats[2] = hunterC[2];
         mats[3] = hunterC[3];
         mats[4] = hunterC[4];
         mats[5] = hunterC[5];
-        Player.GetComponent<MeshRenderer>().materials = mats;
-
+        this.Player.GetComponent<MeshRenderer>().materials = mats;
     }
 
 }

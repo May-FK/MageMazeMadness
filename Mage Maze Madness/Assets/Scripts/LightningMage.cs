@@ -10,7 +10,7 @@ public class LightningMage : BaseMage
     private PlayerController control;
 
     //a bool to ensure the player using the script is the right type of mage to use the lightning ability
-    public bool isLightningMage = false;
+    public bool isLightningMage;
 
     //a bool to act as a switch to turn on the timer. 
     private bool timerStart;
@@ -56,7 +56,7 @@ public class LightningMage : BaseMage
         if (isLightningMage == true)
         {
            // lightningRobes();
-            this.photonView.RPC("lightningRobes", RpcTarget.All);
+            this.photonView.RPC("lightningRobes", RpcTarget.AllBuffered);
             
 
             //If the player has an energy orb they can use their ability.
@@ -99,7 +99,7 @@ public class LightningMage : BaseMage
             //If the mage collides with the Hunter, they become the hunter with a brief no tagback delay.
             if (other.gameObject.tag == "Hunter")
             {
-                this.photonView.RPC("HunterTrigger1", RpcTarget.All);
+                this.photonView.RPC("HunterTrigger1", RpcTarget.AllBuffered);
             }
         }
     }

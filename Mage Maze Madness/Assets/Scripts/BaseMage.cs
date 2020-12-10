@@ -12,6 +12,10 @@ public class BaseMage : MonoBehaviourPunCallbacks
     public GameObject Player;
     public bool hasOrb;
 
+    /*public bool isTheHunter;
+    public bool isWindMage;
+    public bool isLightningMage;
+    public bool isFireMage;*/
     //PhotonView pv = PhotonView.Get(this);
 
 

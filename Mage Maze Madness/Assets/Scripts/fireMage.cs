@@ -9,7 +9,7 @@ using Photon.Pun.Demo.PunBasics;
 public class fireMage : BaseMage
 {
     //a bool to ensure the player using the script is the right type of mage to use the fire ability
-    public bool isFireMage = false;
+    public bool isFireMage;
 
     //a bool to act as a switch to turn on the timer. 
     private bool timerStart;
@@ -59,14 +59,15 @@ public class fireMage : BaseMage
         {
 
             //fireRobes();
-            this.photonView.RPC("fireRobes", RpcTarget.All);
+            this.photonView.RPC("fireRobes", RpcTarget.AllBuffered);
 
             //If the player has an energy orb they can use their ability.
             if (canUseAbility == true)
             {
                 if (Input.GetKeyDown(KeyCode.F) && hasOrb == true)
                 {
-                    this.photonView.RPC("burnWall", RpcTarget.All);
+                    //this.photonView.RPC("burnWall", RpcTarget.All);
+                    burnWall();
                     hasOrb = false;
 
                 }
@@ -109,7 +110,7 @@ public class fireMage : BaseMage
             //If the mage collides with the Hunter, they become the hunter with a brief no tagback delay.
             if (other.gameObject.tag == "Hunter")
             {
-                this.photonView.RPC("HunterTrigger2", RpcTarget.All);
+                this.photonView.RPC("HunterTrigger2", RpcTarget.AllBuffered);
             }
 
             //If the FireMage collides with an active interactable wall, the option to use their ability is unlocked.

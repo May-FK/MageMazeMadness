@@ -2,12 +2,21 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using Photon.Pun;
+using Photon.Realtime;
+using Photon.Pun.Demo.PunBasics;
 
-public class BaseMage : MonoBehaviour
+public class BaseMage : MonoBehaviourPunCallbacks
 {
     //these are the variables that all players will use.
     public GameObject Player;
     public bool hasOrb;
+
+    /*public bool isTheHunter;
+    public bool isWindMage;
+    public bool isLightningMage;
+    public bool isFireMage;*/
+    //PhotonView pv = PhotonView.Get(this);
 
 
     #region CharacterSelect
@@ -34,7 +43,6 @@ public class BaseMage : MonoBehaviour
     #endregion
     //We only need this if we want to do a physical character select instead of a UI Character Select.
 
-    //tbh this script is kinda useless. I was learning about inheritance in class and wanted to try it out.
 }
 
 

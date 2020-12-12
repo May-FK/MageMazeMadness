@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
+using Photon.Pun.Demo.PunBasics;
 
 public class fireMage : BaseMage
 {
     //a bool to ensure the player using the script is the right type of mage to use the fire ability
-    public bool isFireMage = false;
+    public bool isFireMage;
 
     //a bool to act as a switch to turn on the timer. 
     private bool timerStart;
@@ -54,14 +57,16 @@ public class fireMage : BaseMage
         //if a player is a Fire Mage they get the Fire Mage Robes and "Fire" tag.
         if (isFireMage == true)
         {
-            Player.tag = "FireMage";
-            fireRobes();
+
+            //fireRobes();
+            this.photonView.RPC("fireRobes", RpcTarget.AllBuffered);
 
             //If the player has an energy orb they can use their ability.
             if (canUseAbility == true)
             {
                 if (Input.GetKeyDown(KeyCode.F) && hasOrb == true)
                 {
+                    //this.photonView.RPC("burnWall", RpcTarget.All);
                     burnWall();
                     hasOrb = false;
 
@@ -91,7 +96,6 @@ public class fireMage : BaseMage
                 burnTimer = 5.0f;
                 wall.SetActive(true);
                 wall = null;
-
             }
         }
 
@@ -106,10 +110,7 @@ public class fireMage : BaseMage
             //If the mage collides with the Hunter, they become the hunter with a brief no tagback delay.
             if (other.gameObject.tag == "Hunter")
             {
-                Player.GetComponent<fireMage>().isFireMage = false;
-
-                Invoke("BecomeHunter", 1.0f);
-
+                this.photonView.RPC("HunterTrigger2", RpcTarget.AllBuffered);
             }
 
             //If the FireMage collides with an active interactable wall, the option to use their ability is unlocked.
@@ -117,11 +118,21 @@ public class fireMage : BaseMage
             {
                 canUseAbility = true;
                 Debug.Log("Ability can be used");
-
             }
         }
     }
+    [PunRPC]
+    void WallLoad()
+    {
+        
+    }
 
+    [PunRPC]
+    void HunterTrigger2()
+    {
+        Player.GetComponent<fireMage>().isFireMage = false;
+        Invoke("BecomeHunter", 1.0f);
+    }
 
     private void OnTriggerExit(Collider other)
     {
@@ -129,7 +140,6 @@ public class fireMage : BaseMage
         if (isFireMage == true)
         {
             canUseAbility = false;
-
         }
     }
 
@@ -145,7 +155,6 @@ public class fireMage : BaseMage
                 {
                     wall = other.gameObject;
                     wall.SetActive(false);
-
                 }
 
 
@@ -158,23 +167,29 @@ public class fireMage : BaseMage
 
     }
 
+    [PunRPC]
+    void WallTrigger(GameObject wall)
+    {
+        
+        
+    }
 
+    [PunRPC]
     void burnWall()
     {
         useAbility = true;
-
     }
 
 
     void BecomeHunter()
     {
         Player.GetComponent<theHunter>().isTheHunter = true;
-
     }
 
-
+    [PunRPC]
     void fireRobes()
     {
+        Player.tag = "FireMage";
         mats = Player.GetComponent<MeshRenderer>().materials;
         mats[0] = fireC[0];
         mats[1] = fireC[1];

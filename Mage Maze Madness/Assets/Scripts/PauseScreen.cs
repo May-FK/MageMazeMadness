@@ -12,6 +12,7 @@ public class PauseScreen : MonoBehaviour
     public GameObject MainMenu;
     public GameObject Volume;
     public GameObject Back;
+    public GameObject Controls; 
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,8 @@ public class PauseScreen : MonoBehaviour
          Options.SetActive(false);
          MainMenu.SetActive(false);
          Volume.SetActive(false);
-         Back.SetActive(false);
+        Controls.SetActive(false);
+        Back.SetActive(false);
     }
 
     // Update is called once per frame
@@ -36,7 +38,8 @@ public class PauseScreen : MonoBehaviour
              Options.SetActive(true);
              MainMenu.SetActive(true);
              Volume.SetActive(false);
-             Back.SetActive(false);
+            Controls.SetActive(false);
+            Back.SetActive(false);
             Cursor.lockState = CursorLockMode.None;
             Debug.Log("Pause pressed");
         }
@@ -54,6 +57,7 @@ public class PauseScreen : MonoBehaviour
         Options.SetActive(false);
         MainMenu.SetActive(false);
         Volume.SetActive(false);
+        Controls.SetActive(false);
         Back.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Debug.Log("Game resumed");
@@ -66,6 +70,7 @@ public class PauseScreen : MonoBehaviour
         Options.SetActive(false);
         MainMenu.SetActive(false);
         Volume.SetActive(true);
+        Controls.SetActive(true);
         Back.SetActive(true);
     }
     public void GoBack()
@@ -76,10 +81,11 @@ public class PauseScreen : MonoBehaviour
         Options.SetActive(true);
         MainMenu.SetActive(true);
         Volume.SetActive(false);
+        Controls.SetActive(false);
         Back.SetActive(false);
     }
     public void MainClicked()
     {
-        SceneManager.LoadScene("Main Menu");
+        Application.Quit();
     }
     }

@@ -31,7 +31,7 @@ public class fireMage : BaseMage
 
     //this allows the player to change color to match their mage
     public Material[] fireC = new Material[6];
-   
+
     Material[] mats;
 
     public GameObject mana;
@@ -177,7 +177,9 @@ public class fireMage : BaseMage
     [PunRPC]
     void burnWall()
     {
+        fireSound.Play(0);
         useAbility = true;
+
     }
 
 

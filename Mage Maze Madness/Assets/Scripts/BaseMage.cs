@@ -11,6 +11,10 @@ public class BaseMage : MonoBehaviourPunCallbacks
     //these are the variables that all players will use.
     public GameObject Player;
     public bool hasOrb;
+    public AudioSource fireSound;
+    //public AudioSource windSound;
+    //public AudioSource lightningSound;
+    //public AudioSource hunterSound;
 
     /*public bool isTheHunter;
     public bool isWindMage;

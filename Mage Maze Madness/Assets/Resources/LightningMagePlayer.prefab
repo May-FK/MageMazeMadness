@@ -479,7 +479,6 @@ MonoBehaviour:
   - {fileID: -563372319191188345, guid: a75819742e3d8774c953dcc1842a50d2, type: 3}
   - {fileID: 6689289790070600433, guid: a75819742e3d8774c953dcc1842a50d2, type: 3}
   mana: {fileID: 0}
-  noMana: {fileID: 0}
 --- !u!114 &207926112758107946
 MonoBehaviour:
   m_ObjectHideFlags: 0

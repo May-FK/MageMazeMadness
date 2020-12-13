@@ -9945,7 +9945,7 @@ GameObject:
   - component: {fileID: 883399985}
   - component: {fileID: 883399984}
   m_Layer: 0
-  m_Name: thePlayers
+  m_Name: PlayerScoreBoard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9964,6 +9964,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   p1: {fileID: 0}
+  p1score: 0
+  p2: {fileID: 0}
+  p2score: 0
+  p3: {fileID: 0}
+  p3score: 0
 --- !u!4 &883399985
 Transform:
   m_ObjectHideFlags: 0

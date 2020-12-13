@@ -1,18 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class playerAssignment : MonoBehaviour
 {
 
     public GameObject p1;
     public float p1score;
+    public Text P1score;
 
     public GameObject p2;
     public float p2score;
+    public Text P2score;
 
     public GameObject p3;
     public float p3score;
+    public Text P3score;
+
+
+
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
 
     void Start()
     {
@@ -41,6 +54,20 @@ public class playerAssignment : MonoBehaviour
             p3score = p3.GetComponentInChildren<theHunter>().timeTagged;
         }
 
+
+        if (SceneManager.GetActiveScene().name == "Scoreboard")
+        {
+            P1score = GameObject.Find("Canvas/P1score").GetComponent<Text>();
+            P1score.text = "Player 1 Score: " + p1score;
+
+            P2score = GameObject.Find("Canvas/P2score").GetComponent<Text>();
+            P2score.text = "Player 2 Score: " + p2score;
+
+            P3score = GameObject.Find("Canvas/P3score").GetComponent<Text>();
+            P3score.text = "Player 3 Score: " + p3score;
+            Debug.Log("Scoreboard");
+
+        }
 
 
     }

@@ -397,6 +397,7 @@ MonoBehaviour:
   - {fileID: 7038688542854162588, guid: 4545764dac49cca408f33df6eddecc1d, type: 3}
   - {fileID: -563372319191188345, guid: 4545764dac49cca408f33df6eddecc1d, type: 3}
   - {fileID: 6689289790070600433, guid: 4545764dac49cca408f33df6eddecc1d, type: 3}
+  timeTagged: 0
 --- !u!65 &8920957394266835952
 BoxCollider:
   m_ObjectHideFlags: 0

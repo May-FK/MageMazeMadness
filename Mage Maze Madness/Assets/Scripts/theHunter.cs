@@ -14,6 +14,8 @@ public class theHunter : BaseMage
     public Material[] hunterC = new Material[6];
     Material[] mats;
 
+    public float timeTagged;
+
 
     private void Update()
     {
@@ -23,6 +25,8 @@ public class theHunter : BaseMage
         {
             //hunterRobes();
             this.photonView.RPC("hunterRobes", RpcTarget.AllBuffered);
+
+            timeTagged += Time.deltaTime;
         }
 
     }

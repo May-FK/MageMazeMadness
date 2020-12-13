@@ -67,7 +67,7 @@ public class fireMage : BaseMage
             {
                 if (Input.GetKeyDown(KeyCode.F) && hasOrb == true)
                 {
-                    //this.photonView.RPC("burnWall", RpcTarget.All);
+                    this.photonView.RPC("playFireSound", RpcTarget.All);
                     burnWall();
                     hasOrb = false;
 
@@ -178,9 +178,14 @@ public class fireMage : BaseMage
     [PunRPC]
     void burnWall()
     {
-        fireSound.Play(0);
         useAbility = true;
 
+    }
+
+    [PunRPC]
+    void playFireSound()
+    {
+        fireSound.Play(0);
     }
 
 

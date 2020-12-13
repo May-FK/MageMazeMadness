@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.UI;
 using Photon.Realtime;
 using Photon.Pun.Demo.PunBasics;
 
@@ -21,7 +22,7 @@ public class fireMage : BaseMage
     private bool canUseAbility;
 
     //a float that will count down and control the time a hedge stays burned down
-    public float burnTimer = 5.0f;
+    public float burnTimer = 3.0f;
 
     //if the player has all the varibles needed to use the ability they can use the ability
     private bool useAbility;
@@ -34,25 +35,25 @@ public class fireMage : BaseMage
 
     Material[] mats;
 
-    public GameObject mana;
-    public GameObject noMana;
+    public Text mana;
+  
 
     private void Start()
     {
-        mana = GameObject.Find("Mana");
-        noMana = GameObject.Find("No Mana");
-        mana.SetActive(true);
+        mana = GameObject.Find("Canvas/Mana").GetComponent<Text>();
+        mana.text = "Mana";
+        
     }
 
     void Update()
     {
         if (hasOrb)
         {
-            mana.SetActive(true);
+            mana.text = "Mana";
         }
         else
         {
-            mana.SetActive(false);
+            mana.text = "";
         }
         //if a player is a Fire Mage they get the Fire Mage Robes and "Fire" tag.
         if (isFireMage == true)

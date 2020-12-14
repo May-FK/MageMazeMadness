@@ -10,10 +10,10 @@ public class PlayerController : MonoBehaviour
     public float speed = 7.5f;
 
     [Tooltip("Speed the player will move while jumping.")]
-    private float jumpSpeed = 10.0f;
+    private float jumpSpeed = 30.0f;
 
     [Tooltip("The pressure of gravity for the player.")]
-    public float gravity = 10.0f;
+    public float gravity = 20.0f;
 
     [Tooltip("Set to the Main Camera. Make Main Camera a child to this object.")]
     public Camera playerCamera;
@@ -60,7 +60,12 @@ public class PlayerController : MonoBehaviour
             //moveDirection = (forward * curSpeedX) + (right * curSpeedY);
             moveDirection = new Vector3(horizontal, 0f, vertical).normalized;
             child.transform.rotation = Quaternion.LookRotation(moveDirection * -1);
-            Jump();
+            if (jump)
+            {
+                moveDirection = new Vector3(horizontal, jumpSpeed, vertical).normalized;
+                jump = false;
+            }
+            //Jump();
             //jump = false;
         }
 
@@ -89,6 +94,7 @@ public class PlayerController : MonoBehaviour
         if (jump)
         {
             moveDirection.y = jumpSpeed;
+            moveDirection.normalized;
             jump = false;
         }
     }

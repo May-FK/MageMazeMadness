@@ -49,12 +49,14 @@ public class theHunter : BaseMage
             {
                 Debug.Log("You have zapped the electricity of out the Lightning Mage.");
                 this.photonView.RPC("BecomeLightning", RpcTarget.AllBuffered);
+                this.photonView.RPC("playHunterSound", RpcTarget.All);
             }
             
             if (other.gameObject.tag == "WindMage")
             {
                 Debug.Log("You have knocked the wind out of the Wind Mage.");
-                this.photonView.RPC("BecomeWind", RpcTarget.AllBuffered);                
+                this.photonView.RPC("BecomeWind", RpcTarget.AllBuffered);
+                this.photonView.RPC("playHunterSound", RpcTarget.All);
             }
         }
 

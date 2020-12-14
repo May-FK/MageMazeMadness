@@ -63,6 +63,35 @@ public class PlayerScript : MonoBehaviourPunCallbacks
             gameObject.name = "Player3";
         }
 
+        if (photonView.InstantiationId == 4001)
+        {
+            Debug.Log("This is Player4");
+            gameObject.name = "Player4";
+        }
+
+        if (photonView.InstantiationId == 5001)
+        {
+            Debug.Log("This is Player5");
+            gameObject.name = "Player5";
+        }
+
+        if (photonView.InstantiationId == 6001)
+        {
+            Debug.Log("This is Player6");
+            gameObject.name = "Player6";
+        }
+
+        if (photonView.InstantiationId == 7001)
+        {
+            Debug.Log("This is Player7");
+            gameObject.name = "Player7";
+        }
+
+        if (photonView.InstantiationId == 8001)
+        {
+            Debug.Log("This is Player8");
+            gameObject.name = "Player8";
+        }
 
     }
 }

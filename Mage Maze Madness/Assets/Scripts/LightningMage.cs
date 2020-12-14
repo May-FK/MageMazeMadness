@@ -4,6 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using Photon.Pun.Demo.PunBasics;
+using UnityEngine.UI;
 
 public class LightningMage : BaseMage
 {
@@ -16,7 +17,7 @@ public class LightningMage : BaseMage
     private bool timerStart;
 
     //a bool to know if the player has the energy to use an ability 
-    //public bool hasOrb;
+    public bool hasOrb;
 
 
     private float speedMultiplyer = 2.0f;
@@ -27,37 +28,35 @@ public class LightningMage : BaseMage
     public Material[] lightningC = new Material[6];
     Material[] mats;
 
-    public GameObject mana;
-    public GameObject noMana;
-
     public AudioSource lightningSound;
+    public Text mana;
+
 
     void Start()
     {
         control = gameObject.GetComponentInParent<PlayerController>();
         controlSpeed = control.speed;
-        mana = GameObject.Find("Mana");
-        noMana = GameObject.Find("No Mana");
-        mana.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (hasOrb)
-        {
-            mana.SetActive(true);
-        }
-        else
-        {
-            mana.SetActive(false);
-        }
         //if a player is a Fire Mage they get the Lightning Mage Robes and "LightningMage" tag.
         if (isLightningMage == true)
         {
            // lightningRobes();
             this.photonView.RPC("lightningRobes", RpcTarget.AllBuffered);
-            
+
+            if (hasOrb)
+            {
+                mana = GameObject.Find("Canvas/Mana").GetComponent<Text>();
+                mana.text = "Mana";
+            }
+            else
+            {
+                mana = GameObject.Find("Canvas/Mana").GetComponent<Text>();
+                mana.text = "";
+            }
 
             //If the player has an energy orb they can use their ability.
             if (Input.GetKeyDown(KeyCode.F) && hasOrb == true)

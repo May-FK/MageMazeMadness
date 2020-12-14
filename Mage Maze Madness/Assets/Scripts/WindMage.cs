@@ -4,11 +4,12 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using Photon.Pun.Demo.PunBasics;
+using UnityEngine.UI;
 
 public class WindMage : BaseMage
 {
     public bool isWindMage;
-    //public bool hasOrb;
+    public bool hasOrb;
 
     public float jumpSpeed = 20.0f;
     private PlayerController pc;
@@ -16,37 +17,38 @@ public class WindMage : BaseMage
     public Material[] windC = new Material[6];
     Material[] mats;
 
-    public GameObject mana;
-    public GameObject noMana;
-
     public AudioSource windSound;
-  
+    public Text mana;
+
+
 
 
     void Start()
     {
         pc = gameObject.GetComponentInParent<PlayerController>();
-        mana = GameObject.Find("Mana");
-        noMana = GameObject.Find("No Mana");
-        mana.SetActive(true);
+        
     }
 
 
     void Update()
     {
-        if (hasOrb)
-        {
-            mana.SetActive(true);
-        }
-        else
-        {
-            mana.SetActive(false);
-        }
+
         if (isWindMage == true)
         {
             this.photonView.RPC("WindRobes", RpcTarget.AllBuffered);
             //WindRobes();
             //Player.tag = "WindMage";
+
+            if (hasOrb)
+            {
+                mana = GameObject.Find("Canvas/Mana").GetComponent<Text>();
+                mana.text = "Mana";
+            }
+            else
+            {
+                mana = GameObject.Find("Canvas/Mana").GetComponent<Text>();
+                mana.text = "";
+            }
 
             //If the player has an energy orb they can use their ability.
             if (Input.GetKeyDown(KeyCode.F) && hasOrb == true)

@@ -616,8 +616,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 6058920511376276391}
-  hasOrb: 0
   isFireMage: 0
+  hasOrb: 0
   burnTimer: 5
   fireC:
   - {fileID: -8043481242363185392, guid: a75819742e3d8774c953dcc1842a50d2, type: 3}
@@ -641,8 +641,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 6058920511376276391}
-  hasOrb: 0
   isLightningMage: 0
+  hasOrb: 0
   lightningC:
   - {fileID: -8043481242363185392, guid: d16c8d98c3c51f9438ddcffe445f7976, type: 3}
   - {fileID: -4604951603897497505, guid: d16c8d98c3c51f9438ddcffe445f7976, type: 3}
@@ -650,9 +650,8 @@ MonoBehaviour:
   - {fileID: 7038688542854162588, guid: d16c8d98c3c51f9438ddcffe445f7976, type: 3}
   - {fileID: -563372319191188345, guid: d16c8d98c3c51f9438ddcffe445f7976, type: 3}
   - {fileID: 6689289790070600433, guid: d16c8d98c3c51f9438ddcffe445f7976, type: 3}
-  mana: {fileID: 0}
-  noMana: {fileID: 0}
   lightningSound: {fileID: 7689183262074552173}
+  mana: {fileID: 0}
 --- !u!114 &7522186690788573865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -666,8 +665,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 6058920511376276391}
-  hasOrb: 1
   isWindMage: 1
+  hasOrb: 1
   jumpSpeed: 20
   windC:
   - {fileID: -8043481242363185392, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
@@ -676,9 +675,8 @@ MonoBehaviour:
   - {fileID: 7038688542854162588, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
   - {fileID: -563372319191188345, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
   - {fileID: 6689289790070600433, guid: 07a4659855349fc428605da5cffb93a7, type: 3}
-  mana: {fileID: 0}
-  noMana: {fileID: 0}
   windSound: {fileID: 6709052613399049348}
+  mana: {fileID: 0}
 --- !u!114 &5574482769203340822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -692,7 +690,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 6058920511376276391}
-  hasOrb: 0
   isTheHunter: 0
   hunterC:
   - {fileID: -8043481242363185392, guid: 4545764dac49cca408f33df6eddecc1d, type: 3}

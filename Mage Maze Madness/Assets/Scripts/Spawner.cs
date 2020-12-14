@@ -41,10 +41,22 @@ public class Spawner : MonoBehaviour
     {
         if (spawned)
         {
-            if ((other.CompareTag("LightningMage")) || (other.CompareTag("FireMage")) || (other.CompareTag("WindMage")))
+            if (other.CompareTag("LightningMage"))
             {
                 other.GetComponent<LightningMage>().hasOrb = true;
+                spawned = false;
+                timeRemaining = cooldownTime;
+            }
+
+            if (other.CompareTag("FireMage"))
+            {
                 other.GetComponent<fireMage>().hasOrb = true;
+                spawned = false;
+                timeRemaining = cooldownTime;
+            }
+
+            if (other.CompareTag("WindMage"))
+            {
                 other.GetComponent<WindMage>().hasOrb = true;
                 spawned = false;
                 timeRemaining = cooldownTime;
@@ -52,7 +64,7 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    /*private void OnTriggerStay(Collider other)
     {
         if (spawned)
         {
@@ -65,5 +77,5 @@ public class Spawner : MonoBehaviour
                 timeRemaining = cooldownTime;
             }
         }
-    }
+    }*/
 }

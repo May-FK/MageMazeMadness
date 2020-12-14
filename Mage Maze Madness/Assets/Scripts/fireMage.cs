@@ -16,7 +16,7 @@ public class fireMage : BaseMage
     private bool timerStart;
 
     //a bool to know if the player has the energy to use an ability 
-    //[SerializeField] public bool hasOrb;
+    public bool hasOrb;
 
     //when the player is in a position where theye could use the ability 
     private bool canUseAbility;
@@ -38,32 +38,36 @@ public class fireMage : BaseMage
     public Text mana;
 
     public AudioSource fireSound;
-    
+
 
 
     private void Start()
     {
-        mana = GameObject.Find("Canvas/Mana").GetComponent<Text>();
-        mana.text = "Mana";
-        
+                
     }
 
     void Update()
     {
-        if (hasOrb)
-        {
-            mana.text = "Mana";
-        }
-        else
-        {
-            mana.text = "";
-        }
         //if a player is a Fire Mage they get the Fire Mage Robes and "Fire" tag.
         if (isFireMage == true)
         {
 
             //fireRobes();
             this.photonView.RPC("fireRobes", RpcTarget.AllBuffered);
+
+
+            if (hasOrb)
+            {
+                mana = GameObject.Find("Canvas/Mana").GetComponent<Text>();
+                mana.text = "Mana";
+            }
+            else
+            {
+                mana = GameObject.Find("Canvas/Mana").GetComponent<Text>();
+                mana.text = "";
+            }
+
+
 
             //If the player has an energy orb they can use their ability.
             if (canUseAbility == true)

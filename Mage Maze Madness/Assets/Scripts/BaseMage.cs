@@ -10,7 +10,6 @@ public class BaseMage : MonoBehaviourPunCallbacks
 {
     //these are the variables that all players will use.
     public GameObject Player;
-    public bool hasOrb;
 
     /*public bool isTheHunter;
     public bool isWindMage;

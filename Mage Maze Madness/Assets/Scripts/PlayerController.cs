@@ -54,11 +54,11 @@ public class PlayerController : MonoBehaviour
             Vector3 forward = transform.TransformDirection(Vector3.forward).normalized;
             Vector3 right = transform.TransformDirection(Vector3.right).normalized;
 
-            float curSpeedX = Input.GetAxisRaw("Vertical");
-            float curSpeedY = Input.GetAxisRaw("Horizontal");
+            float curSpeedX = speed * Input.GetAxis("Vertical");
+            float curSpeedY = speed * Input.GetAxis("Horizontal");
 
             moveDirection = ((forward * curSpeedX) + (right * curSpeedY)).normalized;
-            //moveDirection *= speed;
+            moveDirection *= speed;
             child.transform.rotation = Quaternion.LookRotation(moveDirection * -1);
             Jump();
             //jump = false;
@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
 
 
         //Movement Speed
-        characterController.Move(moveDirection * speed * Time.deltaTime);
+        characterController.Move(moveDirection * Time.deltaTime);
 
         //Camera rotation
         /*if (canMove)

@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
             float curSpeedY = speed * Input.GetAxis("Horizontal");
 
             moveDirection = (forward * curSpeedX) + (right * curSpeedY);
-            child.transform.rotation = Quaternion.LookRotation(moveDirection);
+            child.transform.rotation = Quaternion.LookRotation(moveDirection * -1);
             Jump();
             //jump = false;
         }

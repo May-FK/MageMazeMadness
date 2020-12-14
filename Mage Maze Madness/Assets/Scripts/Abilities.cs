@@ -235,6 +235,8 @@ public class Abilities : MonoBehaviourPunCallbacks
         this.WindModel.SetActive(false);
         this.LightningModel.SetActive(false);
         this.HunterModel.SetActive(true);
+
+        CurrentType = MageType.Hunter;
     }
 
     [PunRPC]
@@ -242,6 +244,8 @@ public class Abilities : MonoBehaviourPunCallbacks
     {
         this.HunterModel.SetActive(false);
         this.FireModel.SetActive(true);
+
+        CurrentType = MageType.Fire;
     }
 
     [PunRPC]
@@ -249,6 +253,8 @@ public class Abilities : MonoBehaviourPunCallbacks
     {
         this.HunterModel.SetActive(false);
         this.WindModel.SetActive(true);
+
+        CurrentType = MageType.Wind;
     }
 
     [PunRPC]
@@ -256,6 +262,8 @@ public class Abilities : MonoBehaviourPunCallbacks
     {
         this.HunterModel.SetActive(false);
         this.LightningModel.SetActive(true);
+
+        CurrentType = MageType.Lightning;
     }
     #endregion
 }

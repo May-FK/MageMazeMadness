@@ -219,20 +219,20 @@ public class playerAssignment : MonoBehaviour
         }
 
         scores.Sort();
-        //scores.Reverse();
+        scores.Reverse();
         foreach (var x in scores)
         {
             if (P1score.text == "")
             {
-                P1score.text = "1st Place Score: " + Mathf.Round(x * 100f) / 100f;
+                P1score.text = "1. Worst Hunter:  " + Mathf.Round(x * 100f) / 100f;
             }
             else if (P2score.text == "")
             {
-                P2score.text = "2nd Place Score: " + Mathf.Round(x * 100f) / 100f;
+                P2score.text = "2. Inferior Hunter:  " + Mathf.Round(x * 100f) / 100f;
             }
             else if (P3score.text == "")
             {
-                P3score.text = "3rd Place Score: " + Mathf.Round(x * 100f) / 100f;
+                P3score.text = "3. Mediocre Hunter:  " + Mathf.Round(x * 100f) / 100f;
 
             }
         }

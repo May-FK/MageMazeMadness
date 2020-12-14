@@ -36,7 +36,10 @@ public class fireMage : BaseMage
     Material[] mats;
 
     public Text mana;
-  
+
+    public AudioSource fireSound;
+    
+
 
     private void Start()
     {

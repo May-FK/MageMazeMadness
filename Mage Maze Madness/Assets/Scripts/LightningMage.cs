@@ -30,7 +30,7 @@ public class LightningMage : BaseMage
     public GameObject mana;
     public GameObject noMana;
 
-
+    public AudioSource lightningSound;
 
     void Start()
     {
@@ -64,6 +64,7 @@ public class LightningMage : BaseMage
             {
                 control.speed = controlSpeed * speedMultiplyer;
                 timerStart = true;
+                this.photonView.RPC("playLightningSound", RpcTarget.All);
                 hasOrb = false;
             }
 
@@ -129,6 +130,12 @@ public class LightningMage : BaseMage
         mats[5] = lightningC[5];
         Player.GetComponent<MeshRenderer>().materials = mats;
 
+    }
+
+    [PunRPC]
+    void playLightningSound()
+    {
+        lightningSound.Play(0);
     }
 
 }

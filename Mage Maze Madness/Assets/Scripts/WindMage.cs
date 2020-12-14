@@ -19,6 +19,9 @@ public class WindMage : BaseMage
     public GameObject mana;
     public GameObject noMana;
 
+    public AudioSource windSound;
+  
+
 
     void Start()
     {
@@ -50,7 +53,9 @@ public class WindMage : BaseMage
             {
                 pc.jump = true;
                 //pc.characterController.Move(pc.moveDirection * Time.deltaTime);
+                this.photonView.RPC("playWindSound", RpcTarget.All);
                 hasOrb = false;
+
             }
 
             if (Input.GetKeyDown(KeyCode.F) && hasOrb == false)
@@ -97,5 +102,11 @@ public class WindMage : BaseMage
         mats[5] = windC[5];
         Player.GetComponent<MeshRenderer>().materials = mats;
         Player.tag = "WindMage";
+    }
+
+    [PunRPC]
+    void playWindSound()
+    {
+        windSound.Play(0);
     }
 }

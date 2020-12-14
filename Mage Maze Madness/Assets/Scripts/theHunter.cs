@@ -16,6 +16,7 @@ public class theHunter : BaseMage
 
     public float timeTagged;
 
+    public AudioSource hunterSound;
 
     private void Update()
     {
@@ -41,6 +42,7 @@ public class theHunter : BaseMage
             {
                 Debug.Log("You have stolen the flames of magic from the Fire Mage.");
                 this.photonView.RPC("BecomeFire", RpcTarget.AllBuffered);
+                this.photonView.RPC("playHunterSound", RpcTarget.All);
             }
 
             if (other.gameObject.tag == "LightningMage")
@@ -91,6 +93,12 @@ public class theHunter : BaseMage
         mats[4] = hunterC[4];
         mats[5] = hunterC[5];
         this.Player.GetComponent<MeshRenderer>().materials = mats;
+    }
+
+    [PunRPC]
+    void playHunterSound()
+    {
+        hunterSound.Play(0);
     }
 
 }

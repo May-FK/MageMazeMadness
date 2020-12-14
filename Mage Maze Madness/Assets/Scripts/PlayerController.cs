@@ -65,10 +65,11 @@ public class PlayerController : MonoBehaviour
             if (jump)
             {
                 playerVelocity.y += Mathf.Sqrt(jumpSpeed * -3.0f * gravityValue);
-                playerVelocity.y += gravityValue * Time.deltaTime;
-                characterController.Move(playerVelocity * Time.deltaTime);
+                
                 jump = false;
             }
+            playerVelocity.y += gravityValue * Time.deltaTime;
+            characterController.Move(playerVelocity * Time.deltaTime);
             //Jump();
             //jump = false;
         }

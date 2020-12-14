@@ -3,13 +3,16 @@ using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class PlayerScript : MonoBehaviourPunCallbacks
 {
-   
+    public Text yourPlayer;
+
     private void Awake()
     {
+
         if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
         {
 
@@ -21,6 +24,8 @@ public class PlayerScript : MonoBehaviourPunCallbacks
             fireMage fire = GetComponentInChildren<fireMage>();
             LightningMage lightning = GetComponentInChildren<LightningMage>();
             //thePlayer = GetComponentInChildren<>();
+
+
 
             //hunter.enabled = false;
             wind.enabled = false;
@@ -38,7 +43,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -92,6 +97,14 @@ public class PlayerScript : MonoBehaviourPunCallbacks
             //Debug.Log("This is Player8");
             gameObject.name = "Player8";
         }
+
+        if (photonView.IsMine)
+        {
+            yourPlayer = GameObject.Find("Canvas/PlayerName").GetComponent<Text>();
+            yourPlayer.text = gameObject.name;
+        }
+
+
 
     }
 }

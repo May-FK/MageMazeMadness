@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
 
     [Tooltip("The pressure of gravity for the player.")]
     public float gravity = 20.0f;
+    private float gravityValue = -9.81f * 10f;
 
     [Tooltip("Set to the Main Camera. Make Main Camera a child to this object.")]
     public Camera playerCamera;
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
 
     public CharacterController characterController;
     public Vector3 moveDirection = Vector3.zero;
+    public Vector3 playerVelocity;
     Vector2 rotation = Vector2.zero;
 
     [HideInInspector]
@@ -62,7 +64,9 @@ public class PlayerController : MonoBehaviour
             child.transform.rotation = Quaternion.LookRotation(moveDirection * -1);
             if (jump)
             {
-                moveDirection = new Vector3(horizontal, jumpSpeed, vertical).normalized;
+                playerVelocity.y += Mathf.Sqrt(jumpSpeed * -3.0f * gravityValue);
+                playerVelocity.y += gravityValue * Time.deltaTime;
+                characterController.Move(playerVelocity * Time.deltaTime);
                 jump = false;
             }
             //Jump();

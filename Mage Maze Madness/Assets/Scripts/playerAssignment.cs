@@ -139,6 +139,7 @@ public class playerAssignment : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().name == "Scoreboard")
         {
+            Cursor.visible = true;
 
             if (tallyScore == false)
             {
@@ -173,6 +174,7 @@ public class playerAssignment : MonoBehaviour
 
         yourScore = GameObject.Find("Canvas/YourScore").GetComponent<Text>();
         yourScore.text = "Your score: " + Mathf.Round(PlayerScript.yourHunterTime * 100f) / 100f;
+        //can add 600 - at the beginning if we want high scores to be better
 
 
         var scores = new List<float>();
@@ -217,6 +219,7 @@ public class playerAssignment : MonoBehaviour
         }
 
         scores.Sort();
+        //scores.Reverse();
         foreach (var x in scores)
         {
             if (P1score.text == "")

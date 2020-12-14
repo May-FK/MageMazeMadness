@@ -72,7 +72,7 @@ public class fireMage : BaseMage
             //If the player has an energy orb they can use their ability.
             if (canUseAbility == true)
             {
-                if (Input.GetKeyDown(KeyCode.F) && hasOrb == true)
+                if (Input.GetKeyDown(KeyCode.F) && hasOrb == true && wall == null)
                 {
                     this.photonView.RPC("playFireSound", RpcTarget.All);
                     burnWall();
@@ -101,7 +101,7 @@ public class fireMage : BaseMage
             else if (burnTimer <= 0)
             {
                 timerStart = false;
-                burnTimer = 5.0f;
+                burnTimer = 3.0f;
                 wall.SetActive(true);
                 wall = null;
             }

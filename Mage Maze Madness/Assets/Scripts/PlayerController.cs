@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 
     [Tooltip("The pressure of gravity for the player.")]
     public float gravity = 20.0f;
-    private float gravityValue = -9.81f * 10f;
+    private float gravityValue = -9.81f;
 
     [Tooltip("Set to the Main Camera. Make Main Camera a child to this object.")]
     public Camera playerCamera;
@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Gravity
-        moveDirection.y -= gravity * Time.deltaTime;
+        //moveDirection.y -= gravity * Time.deltaTime;
 
 
         //Movement Speed

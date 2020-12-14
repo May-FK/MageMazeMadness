@@ -21,6 +21,7 @@ public class playerAssignment : MonoBehaviour
 
     public Button Quit;
 
+    bool tallyScore;
 
     private void Awake()
     {
@@ -29,7 +30,7 @@ public class playerAssignment : MonoBehaviour
 
     void Start()
     {
-
+        tallyScore = false;
     }
 
     // Update is called once per frame
@@ -39,7 +40,7 @@ public class playerAssignment : MonoBehaviour
         p1 = GameObject.Find("Player1");
         p2 = GameObject.Find("Player2");
         p3 = GameObject.Find("Player3");
-     
+
 
         if (p1 != null)
         {
@@ -55,24 +56,16 @@ public class playerAssignment : MonoBehaviour
         {
             p3score = p3.GetComponentInChildren<theHunter>().timeTagged;
         }
-        
+
 
         if (SceneManager.GetActiveScene().name == "Scoreboard")
         {
 
-
-            P1score = GameObject.Find("Canvas/P1score").GetComponent<Text>();
-            P1score.text = "Player 1 Score: " + Mathf.Round(p1score * 100f) / 100f;
-
-            P2score = GameObject.Find("Canvas/P2score").GetComponent<Text>();
-            P2score.text = "Player 2 Score: " + Mathf.Round(p2score * 100f) / 100f;
-
-            P3score = GameObject.Find("Canvas/P3score").GetComponent<Text>();
-            P3score.text = "Player 3 Score: " + Mathf.Round(p3score * 100f) / 100f;
-
-
-            Debug.Log("Scoreboard");
-
+            if (tallyScore == false)
+            {
+                sortScores();
+                tallyScore = true;
+            }
 
             Quit = GameObject.Find("Canvas/Quit").GetComponent<Button>();
             Quit.onClick.AddListener(quitButton);
@@ -86,4 +79,42 @@ public class playerAssignment : MonoBehaviour
         Debug.Log("Quitting");
         Application.Quit();
     }
+
+    public void sortScores()
+    {
+
+        P1score = GameObject.Find("Canvas/P1score").GetComponent<Text>();
+        P1score.text = "";
+
+        P2score = GameObject.Find("Canvas/P2score").GetComponent<Text>();
+        P2score.text = "";
+
+        P3score = GameObject.Find("Canvas/P3score").GetComponent<Text>();
+        P3score.text = "";
+
+        var scores = new List<float>();
+        scores.Add(p1score);
+        scores.Add(p2score);
+        scores.Add(p3score);
+        scores.Sort();
+        foreach (var x in scores)
+        {
+            if (P1score.text == "")
+            {
+                P1score.text = "1st Place Score: " + Mathf.Round(x * 100f) / 100f;
+            }
+            else if (P2score.text == "")
+            {
+                P2score.text = "2nd Place Score: " + Mathf.Round(x * 100f) / 100f;
+            }
+            else if (P3score.text == "")
+            {
+                P3score.text = "3rd Place Score: " + Mathf.Round(x * 100f) / 100f;
+
+            }
+        }
+
+    }
+
+
 }

@@ -47,49 +47,49 @@ public class PlayerScript : MonoBehaviourPunCallbacks
 
         if (photonView.InstantiationId == 1001)
         {
-            Debug.Log("This is Player1");
+            //Debug.Log("This is Player1");
             gameObject.name = "Player1";
         }
 
         if (photonView.InstantiationId == 2001)
         {
-            Debug.Log("This is Player2");
+            //Debug.Log("This is Player2");
             gameObject.name = "Player2";
         }
 
         if (photonView.InstantiationId == 3001)
         {
-            Debug.Log("This is Player3");
+            //Debug.Log("This is Player3");
             gameObject.name = "Player3";
         }
 
         if (photonView.InstantiationId == 4001)
         {
-            Debug.Log("This is Player4");
+            //Debug.Log("This is Player4");
             gameObject.name = "Player4";
         }
 
         if (photonView.InstantiationId == 5001)
         {
-            Debug.Log("This is Player5");
+            //Debug.Log("This is Player5");
             gameObject.name = "Player5";
         }
 
         if (photonView.InstantiationId == 6001)
         {
-            Debug.Log("This is Player6");
+            //Debug.Log("This is Player6");
             gameObject.name = "Player6";
         }
 
         if (photonView.InstantiationId == 7001)
         {
-            Debug.Log("This is Player7");
+            //Debug.Log("This is Player7");
             gameObject.name = "Player7";
         }
 
         if (photonView.InstantiationId == 8001)
         {
-            Debug.Log("This is Player8");
+            //Debug.Log("This is Player8");
             gameObject.name = "Player8";
         }
 

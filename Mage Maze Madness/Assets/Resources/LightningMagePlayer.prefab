@@ -163,6 +163,7 @@ MonoBehaviour:
   moveDirection: {x: 0, y: 0, z: 0}
   canMove: 1
   jump: 0
+  child: {fileID: 8749232449037928921}
 --- !u!114 &9009601459049405447
 MonoBehaviour:
   m_ObjectHideFlags: 0

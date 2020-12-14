@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
 
     public bool jump = false;
 
+    public GameObject child;
 
 
 
@@ -40,13 +41,13 @@ public class PlayerController : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         rotation.y = transform.eulerAngles.y;
-       
+
     }
 
     void Update()
     {
 
-        
+
         //Basic Movement Controlls
         if (characterController.isGrounded)
         {
@@ -57,6 +58,7 @@ public class PlayerController : MonoBehaviour
             float curSpeedY = speed * Input.GetAxis("Horizontal");
 
             moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+            child.transform.rotation = Quaternion.LookRotation(moveDirection);
             Jump();
             //jump = false;
         }
@@ -64,7 +66,7 @@ public class PlayerController : MonoBehaviour
         //Gravity
         moveDirection.y -= gravity * Time.deltaTime;
 
-        
+
         //Movement Speed
         characterController.Move(moveDirection * Time.deltaTime);
 
@@ -78,6 +80,7 @@ public class PlayerController : MonoBehaviour
             playerCamera.transform.localRotation = Quaternion.Euler(rotation.x, 0, 0);
             transform.eulerAngles = new Vector2(0, rotation.y);
         }*/
+
     }
 
     public void Jump()

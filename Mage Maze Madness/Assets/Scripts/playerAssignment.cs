@@ -19,6 +19,8 @@ public class playerAssignment : MonoBehaviour
     public float p3score;
     public Text P3score;
 
+    public Button Quit;
+
 
 
 
@@ -67,8 +69,16 @@ public class playerAssignment : MonoBehaviour
             P3score.text = "Player 3 Score: " + p3score;
             Debug.Log("Scoreboard");
 
+            Quit = GameObject.Find("Canvas/Quit").GetComponent<Button>();
+            Quit.onClick.AddListener(quitButton);
         }
 
+        
+    }
 
+    public void quitButton()
+    {
+        Debug.Log("Quitting");
+        Application.Quit();
     }
 }

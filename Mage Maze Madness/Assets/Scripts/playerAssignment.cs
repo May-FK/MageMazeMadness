@@ -9,36 +9,32 @@ public class playerAssignment : MonoBehaviour
 {
     public GameObject p1;
     public float p1score;
-    public Text P1score;
 
     public GameObject p2;
     public float p2score;
-    public Text P2score;
 
     public GameObject p3;
     public float p3score;
-    public Text P3score;
-
+   
     public GameObject p4;
     public float p4score;
-    public Text P4score;
 
     public GameObject p5;
     public float p5score;
-    public Text P5score;
 
     public GameObject p6;
     public float p6score;
-    public Text P6score;
 
     public GameObject p7;
     public float p7score;
-    public Text P7score;
 
     public GameObject p8;
     public float p8score;
-    public Text P8score;
 
+    public Text P1score;
+    public Text P2score;
+    public Text P3score;
+    public Text yourScore;
 
     public Button Quit;
 
@@ -57,56 +53,90 @@ public class playerAssignment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        p1 = GameObject.Find("Player1");
-        p2 = GameObject.Find("Player2");
-        p3 = GameObject.Find("Player3");
-        p4 = GameObject.Find("Player4");
-        p5 = GameObject.Find("Player5");
-        p6 = GameObject.Find("Player6");
-        p7 = GameObject.Find("Player7");
-        p8 = GameObject.Find("Player8");
-
-        if (p1 != null)
+        if (SceneManager.GetActiveScene().name == "Level 1")
         {
-            p1score = p1.GetComponentInChildren<theHunter>().timeTagged;
-        } 
-        
 
-        if (p2 != null)
-        {
-            p2score = p2.GetComponentInChildren<theHunter>().timeTagged;
+            p1 = GameObject.Find("Player1");
+            p2 = GameObject.Find("Player2");
+            p3 = GameObject.Find("Player3");
+            p4 = GameObject.Find("Player4");
+            p5 = GameObject.Find("Player5");
+            p6 = GameObject.Find("Player6");
+            p7 = GameObject.Find("Player7");
+            p8 = GameObject.Find("Player8");
+
+            if (p1 != null)
+            {
+                p1score = p1.GetComponentInChildren<theHunter>().timeTagged;
+            }
+            else
+            {
+                p1score = -1;
+            }
+
+            if (p2 != null)
+            {
+                p2score = p2.GetComponentInChildren<theHunter>().timeTagged;
+            }
+            else
+            {
+                p2score = -1;
+            }
+
+            if (p3 != null)
+            {
+                p3score = p3.GetComponentInChildren<theHunter>().timeTagged;
+            }
+            else
+            {
+                p3score = -1;
+            }
+
+            if (p4 != null)
+            {
+                p4score = p4.GetComponentInChildren<theHunter>().timeTagged;
+            }
+            else
+            {
+                p4score = -1;
+            }
+
+            if (p5 != null)
+            {
+                p5score = p5.GetComponentInChildren<theHunter>().timeTagged;
+            }
+            else
+            {
+                p5score = -1;
+            }
+
+            if (p6 != null)
+            {
+                p6score = p6.GetComponentInChildren<theHunter>().timeTagged;
+            }
+            else
+            {
+                p6score = -1;
+            }
+
+            if (p7 != null)
+            {
+                p7score = p7.GetComponentInChildren<theHunter>().timeTagged;
+            }
+            else
+            {
+                p7score = -1;
+            }
+
+            if (p8 != null)
+            {
+                p8score = p8.GetComponentInChildren<theHunter>().timeTagged;
+            }
+            else
+            {
+                p8score = -1;
+            }
         }
-
-        if (p3 != null)
-        {
-            p3score = p3.GetComponentInChildren<theHunter>().timeTagged;
-        }
-
-        if (p4 != null)
-        {
-            p4score = p4.GetComponentInChildren<theHunter>().timeTagged;
-        }
-
-        if (p5 != null)
-        {
-            p5score = p5.GetComponentInChildren<theHunter>().timeTagged;
-        }
-
-        if (p6 != null)
-        {
-            p6score = p6.GetComponentInChildren<theHunter>().timeTagged;
-        }
-
-        if (p7 != null)
-        {
-            p7score = p7.GetComponentInChildren<theHunter>().timeTagged;
-        }
-
-        if (p8 != null)
-        {
-            p8score = p8.GetComponentInChildren<theHunter>().timeTagged;
-        }
-
         if (SceneManager.GetActiveScene().name == "Scoreboard")
         {
 
@@ -131,7 +161,7 @@ public class playerAssignment : MonoBehaviour
 
     public void sortScores()
     {
-     
+
         P1score = GameObject.Find("Canvas/P1score").GetComponent<Text>();
         P1score.text = "";
 
@@ -141,58 +171,47 @@ public class playerAssignment : MonoBehaviour
         P3score = GameObject.Find("Canvas/P3score").GetComponent<Text>();
         P3score.text = "";
 
-        P4score = GameObject.Find("Canvas/P4score").GetComponent<Text>();
-        P4score.text = "";
+        yourScore = GameObject.Find("Canvas/YourScore").GetComponent<Text>();
+        yourScore.text = "Your score: " + Mathf.Round(PlayerScript.yourHunterTime * 100f) / 100f;
 
-        P5score = GameObject.Find("Canvas/P5score").GetComponent<Text>();
-        P5score.text = "";
-
-        P6score = GameObject.Find("Canvas/P6score").GetComponent<Text>();
-        P6score.text = "";
-
-        P7score = GameObject.Find("Canvas/P7score").GetComponent<Text>();
-        P7score.text = "";
-
-        P8score = GameObject.Find("Canvas/P8score").GetComponent<Text>();
-        P8score.text = "";
 
         var scores = new List<float>();
-        if (P1score != null)
+        if (p1score >= 0)
         {
             scores.Add(p1score);
         }
 
-        if (P2score != null)
+        if (p2score >= 0)
         {
             scores.Add(p2score);
         }
-      
-        if (P3score != null)
+
+        if (p3score >= 0)
         {
             scores.Add(p3score);
         }
 
-        if (P4score != null)
+        if (p4score >= 0)
         {
             scores.Add(p4score);
         }
 
-        if (P5score != null)
+        if (p5score >= 0)
         {
             scores.Add(p5score);
         }
 
-        if (P6score != null)
+        if (p6score >= 0)
         {
             scores.Add(p6score);
         }
 
-        if (P7score != null)
+        if (p7score >= 0)
         {
             scores.Add(p7score);
         }
 
-        if (P8score != null)
+        if (p8score >= 0)
         {
             scores.Add(p8score);
         }
@@ -216,7 +235,8 @@ public class playerAssignment : MonoBehaviour
         }
         Debug.Log("scoreboard screen");
 
-        
+        Debug.Log(PlayerScript.yourHunterTime);
+
 
 
     }

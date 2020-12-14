@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class PlayerScript : MonoBehaviourPunCallbacks
 {
     public Text yourPlayer;
+    public static float yourHunterTime;
 
     private void Awake()
     {
@@ -102,6 +103,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks
         {
             yourPlayer = GameObject.Find("Canvas/PlayerName").GetComponent<Text>();
             yourPlayer.text = gameObject.name;
+            yourHunterTime = gameObject.GetComponentInChildren<theHunter>().timeTagged;
         }
 
 

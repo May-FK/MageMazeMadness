@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
 
     [Tooltip("The pressure of gravity for the player.")]
     public float gravity = 20.0f;
-    private float gravityValue = -9.81f;
 
     [Tooltip("Set to the Main Camera. Make Main Camera a child to this object.")]
     public Camera playerCamera;
@@ -27,7 +26,6 @@ public class PlayerController : MonoBehaviour
 
     public CharacterController characterController;
     public Vector3 moveDirection = Vector3.zero;
-    public Vector3 playerVelocity;
     Vector2 rotation = Vector2.zero;
 
     [HideInInspector]
@@ -53,33 +51,24 @@ public class PlayerController : MonoBehaviour
         //Basic Movement Controlls
         if (characterController.isGrounded)
         {
-            //Vector3 forward = transform.TransformDirection(Vector3.forward).normalized;
-            //Vector3 right = transform.TransformDirection(Vector3.right).normalized;
+            Vector3 forward = transform.TransformDirection(Vector3.forward).normalized;
+            Vector3 right = transform.TransformDirection(Vector3.right).normalized;
 
-            float vertical = Input.GetAxisRaw("Vertical");
-            float horizontal = Input.GetAxisRaw("Horizontal");
+            float curSpeedX = speed * Input.GetAxis("Vertical");
+            float curSpeedY = speed * Input.GetAxis("Horizontal");
 
-            //moveDirection = (forward * curSpeedX) + (right * curSpeedY);
-            moveDirection = new Vector3(horizontal, 0f, vertical).normalized;
+            moveDirection = (forward * curSpeedX) + (right * curSpeedY);
             child.transform.rotation = Quaternion.LookRotation(moveDirection * -1);
-            if (jump)
-            {
-                playerVelocity.y += Mathf.Sqrt(jumpSpeed * -3.0f * gravityValue);
-                
-                jump = false;
-            }
-            playerVelocity.y += gravityValue * Time.deltaTime;
-            characterController.Move(playerVelocity * Time.deltaTime);
-            //Jump();
+            Jump();
             //jump = false;
         }
 
         //Gravity
-        //moveDirection.y -= gravity * Time.deltaTime;
+        moveDirection.y -= gravity * Time.deltaTime;
 
 
         //Movement Speed
-        characterController.Move(moveDirection * speed * Time.deltaTime);
+        characterController.Move(moveDirection * Time.deltaTime);
 
         //Camera rotation
         /*if (canMove)

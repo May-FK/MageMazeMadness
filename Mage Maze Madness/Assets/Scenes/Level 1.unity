@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -164,6 +164,7 @@ Transform:
   - {fileID: 399577331}
   - {fileID: 1587784858}
   - {fileID: 1593983075}
+  - {fileID: 657219264}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7397,6 +7398,50 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.009999999, y: 0.053176694, z: 0.0187863}
   m_Center: {x: 2.3283062e-10, y: 0.021588348, z: -0.00017017404}
+--- !u!1 &657219263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 657219264}
+  - component: {fileID: 657219265}
+  m_Layer: 0
+  m_Name: InvisibleWall (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &657219264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657219263}
+  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: 0.006, y: 0.318, z: 15.68}
+  m_LocalScale: {x: 40.000023, y: 1, z: 0.02500001}
+  m_Children: []
+  m_Father: {fileID: 5291580}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
+--- !u!65 &657219265
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657219263}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &683661914
 GameObject:
   m_ObjectHideFlags: 0
@@ -9888,28 +9933,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p1: {fileID: 0}
   p1score: 0
-  P1score: {fileID: 0}
   p2: {fileID: 0}
   p2score: 0
-  P2score: {fileID: 0}
   p3: {fileID: 0}
   p3score: 0
-  P3score: {fileID: 0}
   p4: {fileID: 0}
   p4score: 0
-  P4score: {fileID: 0}
   p5: {fileID: 0}
   p5score: 0
-  P5score: {fileID: 0}
   p6: {fileID: 0}
   p6score: 0
-  P6score: {fileID: 0}
   p7: {fileID: 0}
   p7score: 0
-  P7score: {fileID: 0}
   p8: {fileID: 0}
   p8score: 0
-  P8score: {fileID: 0}
+  P1score: {fileID: 0}
+  P2score: {fileID: 0}
+  P3score: {fileID: 0}
+  yourScore: {fileID: 0}
   Quit: {fileID: 0}
 --- !u!4 &883399985
 Transform:

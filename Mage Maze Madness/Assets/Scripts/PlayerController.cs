@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
             float horizontal = Input.GetAxisRaw("Horizontal");
 
             //moveDirection = (forward * curSpeedX) + (right * curSpeedY);
-            moveDirection = new Vector3(-horizontal, 0f, -vertical).normalized;
+            moveDirection = new Vector3(horizontal, 0f, vertical).normalized;
             child.transform.rotation = Quaternion.LookRotation(moveDirection * -1);
             Jump();
             //jump = false;

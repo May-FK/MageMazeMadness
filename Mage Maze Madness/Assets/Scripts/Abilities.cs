@@ -159,6 +159,26 @@ public class Abilities : MonoBehaviourPunCallbacks
             canBurn = true;
             Debug.Log("Ability can be used");
         }
+
+        if (CurrentType == MageType.Hunter)
+        {
+            NextType = col.GetComponent<Abilities>().GetCurrentType();
+
+            switch (NextType)
+            {
+                case MageType.Hunter:
+                    return;
+                case MageType.Fire:
+                    this.photonView.RPC("BecomeFire", RpcTarget.AllBuffered);
+                    break;
+                case MageType.Wind:
+                    this.photonView.RPC("BecomeWind", RpcTarget.AllBuffered);
+                    break;
+                case MageType.Lightning:
+                    this.photonView.RPC("BecomeLightning", RpcTarget.AllBuffered);
+                    break;
+            }
+        }
     }
 
     private void OnTriggerStay(Collider col)

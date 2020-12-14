@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 7.5f;
 
     [Tooltip("Speed the player will move while jumping.")]
-    private float jumpSpeed = 30.0f;
+    private float jumpSpeed = 5.0f;
 
     [Tooltip("The pressure of gravity for the player.")]
     public float gravity = 20.0f;
@@ -51,8 +51,8 @@ public class PlayerController : MonoBehaviour
         //Basic Movement Controlls
         if (characterController.isGrounded)
         {
-            Vector3 forward = transform.TransformDirection(Vector3.forward).normalized;
-            Vector3 right = transform.TransformDirection(Vector3.right).normalized;
+            //Vector3 forward = transform.TransformDirection(Vector3.forward).normalized;
+            //Vector3 right = transform.TransformDirection(Vector3.right).normalized;
 
             float vertical = Input.GetAxisRaw("Vertical");
             float horizontal = Input.GetAxisRaw("Horizontal");

@@ -94,7 +94,6 @@ public class PlayerController : MonoBehaviour
         if (jump)
         {
             moveDirection.y = jumpSpeed;
-            moveDirection.normalized;
             jump = false;
         }
     }
